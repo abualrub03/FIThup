@@ -21,11 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModel", "DataAccessLaye
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "CoreLayer\Core\Core.csproj", "{CC6AE0BB-4EE6-48B8-9342-B4A1C539342A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIThup", "PresentationLayer\FIThup.Web\FIThup.csproj", "{74081245-0C3E-48A8-A107-4D6902AC4277}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIThup.Web", "PresentationLayer\FIThup.Web\FIThup.Web.csproj", "{74081245-0C3E-48A8-A107-4D6902AC4277}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIThupProvider", "RepositoryLayer\FIThupProvider\FIThupProvider.csproj", "{60A9D023-F51D-494A-8F5B-8FDCC320AE4A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIThupService", "ServiceLayer\FIThupService\FIThupService.csproj", "{2235A408-E1AA-465E-B712-070AF87D5A22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIThup.API", "PresentationLayer\FIThup.API\FIThup.API.csproj", "{D54558F3-616F-4F48-A90D-A28147053E13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{2235A408-E1AA-465E-B712-070AF87D5A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2235A408-E1AA-465E-B712-070AF87D5A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2235A408-E1AA-465E-B712-070AF87D5A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D54558F3-616F-4F48-A90D-A28147053E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D54558F3-616F-4F48-A90D-A28147053E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D54558F3-616F-4F48-A90D-A28147053E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D54558F3-616F-4F48-A90D-A28147053E13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{74081245-0C3E-48A8-A107-4D6902AC4277} = {24BEA9A3-C3F8-425E-B1F8-D96FD1F1821E}
 		{60A9D023-F51D-494A-8F5B-8FDCC320AE4A} = {B642A44E-B54D-4E38-B9AC-7CAAA2DDE40E}
 		{2235A408-E1AA-465E-B712-070AF87D5A22} = {B1BBF06C-012F-41AC-B74C-8E2887B647A5}
+		{D54558F3-616F-4F48-A90D-A28147053E13} = {24BEA9A3-C3F8-425E-B1F8-D96FD1F1821E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B4A66AB4-863A-4299-89B6-76E9E9941330}
