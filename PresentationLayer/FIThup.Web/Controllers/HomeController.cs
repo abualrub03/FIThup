@@ -11,6 +11,10 @@ namespace FIThup.Controllers
         {
             return View();
         }
+        public IActionResult Club()
+        {
+            return View();
+        }
 
     }
 }
