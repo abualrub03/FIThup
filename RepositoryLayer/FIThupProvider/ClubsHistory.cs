@@ -1,7 +1,7 @@
 ﻿namespace FIThupProvider
 {
-    public class Class1
+    public class ClubsHistory
     {
-
+            
     }
 }
