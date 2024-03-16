@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    internal class DataAccessLayer : Disposable
+    public class DataAccessLayer : Disposable
     {
         public List<SqlParameter> Parameters { get; set; } = new List<SqlParameter>();
         private string connectionString { get; set; }

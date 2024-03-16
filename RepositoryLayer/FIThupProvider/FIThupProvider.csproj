@@ -11,4 +11,10 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreLayer\Core\Core.csproj" />
+    <ProjectReference Include="..\..\DataAccessLayer\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\..\DataAccessLayer\Entities\Entities.csproj" />
+  </ItemGroup>
+
 </Project>
