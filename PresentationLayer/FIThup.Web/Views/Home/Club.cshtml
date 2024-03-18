@@ -32,7 +32,7 @@
                         <li class="fs-14 clr-neutral-80 d-flex gap-2">
                         <i class="bi bi-calendar2-date"></i> <!--Updated On October--> Last Update @Model.clubsHistory.FirstOrDefault().LastUpdateDateTime
                         </li>
-                        <li class="fs-14 clr-neutral-80 d-flex gap-2"><i class="bi bi-person-circle"></i> By @Model.student.FirstOrDefault().FullName</li>
+                        <li class="fs-14 clr-neutral-80 d-flex gap-2"><i class="bi bi-person-circle"></i> By @Model.Users.FirstOrDefault().FullName</li>
                     </ul>
                 </div>
             </div>
@@ -270,35 +270,39 @@
                 <div class="col-lg-12">
                     <div class="scroller-x mb-5 dark-overlay" data-direction="right" data-speed="slow" data-animated="true">
                         <ul class="list list-row gap-5 scroller-x__list">
-                            <li>
-                                <div class="team-card rounded-3 py-12 px-6 text-center">
-                                    <img src="/img/team-1.png" alt="image" class="img-fluid">
-                                    <h5 class="clr-neutral-90 fs-18 mb-1 mt-5">Matheo Shena</h5>
-                                    <span class="clr-neutral-80 fs-12">UI &amp; UX Designer</span>
-                                    <ul class="list list-row gap-5 mt-4 justify-content-center">
-                                        <li>
-                                            <a href="#" class="link clr-neutral-40">
-                                                <i class="bi bi-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0" class="link clr-neutral-40">
-                                                <i class="bi bi-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0" class="link clr-neutral-40">
-                                                <i class="bi bi-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0" class="link clr-neutral-40">
-                                                <i class="bi bi-linkedin"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                            @for(var a = 0 ; a < Model.TeamMembers.Count() / 2 ;a++)
+                            {
+                                <li>
+                                    <div class="team-card rounded-3 py-12 px-6 text-center">
+                                        <img src="/img/team-1.png" alt="image" class="img-fluid">
+                                        <h5 class="clr-neutral-90 fs-18 mb-1 mt-5">@Model.TeamMembers[a].FullName</h5>
+                                        <span class="clr-neutral-80 fs-12">UI &amp; UX Designer</span>
+                                        <ul class="list list-row gap-5 mt-4 justify-content-center">
+                                            <li>
+                                                <a href="#" class="link clr-neutral-40">
+                                                    <i class="bi bi-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#0" class="link clr-neutral-40">
+                                                    <i class="bi bi-instagram"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#0" class="link clr-neutral-40">
+                                                    <i class="bi bi-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#0" class="link clr-neutral-40">
+                                                    <i class="bi bi-linkedin"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            }
+                            <!--
                             <li>
                                 <div class="team-card rounded-3 py-12 px-6 text-center">
                                     <img src="/img/team-2.png" alt="image" class="img-fluid">
@@ -560,10 +564,45 @@
                                     </ul>
                                 </div>
                             </li>
+                            -->
                         </ul>
                     </div>
                     <div class="scroller-x mb-4 dark-overlay" data-direction="left" data-speed="slow" data-animated="true">
                         <ul class="list list-row gap-5 scroller-x__list">
+                            @for (var a = Model.TeamMembers.Count()/2; a < Model.TeamMembers.Count() ; a++)
+                            {
+                                <li>
+                                    <div class="team-card rounded-3 py-12 px-6 text-center">
+                                        <img src="/img/team-1.png" alt="image" class="img-fluid">
+                                        <h5 class="clr-neutral-90 fs-18 mb-1 mt-5">@Model.TeamMembers[a].FullName</h5>
+                                        <span class="clr-neutral-80 fs-12">UI &amp; UX Designer</span>
+                                        <ul class="list list-row gap-5 mt-4 justify-content-center">
+                                            <li>
+                                                <a href="#" class="link clr-neutral-40">
+                                                    <i class="bi bi-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#0" class="link clr-neutral-40">
+                                                    <i class="bi bi-instagram"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#0" class="link clr-neutral-40">
+                                                    <i class="bi bi-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#0" class="link clr-neutral-40">
+                                                    <i class="bi bi-linkedin"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            }
+
+                            <!--
                             <li>
                                 <div class="team-card rounded-3 py-12 px-6 text-center">
                                     <img src="/img/team-1.png" alt="image" class="img-fluid">
@@ -853,7 +892,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -872,7 +911,7 @@
                             <div class="d-inline-flex align-items-center py-2 px-4 bg-info-10 bg-opacity-3 rounded-1">
                                 <span class="fs-12 clr-white">WriteBot AI</span>
                             </div>
-                            <h2 class="h3 fw-bold clr-neutral-90 mt-4">Questions? We Have Answers.</h2>
+                            <h2 class="h3 fw-bold clr-neutral-90 mt-4"> Know More About us ? </h2>
                         </div>
                     </div>
                 </div>
@@ -882,7 +921,7 @@
                             <nav class="todo-nav style-two">
                                 <ul class="list gap-5 nav todo-nav__menu" role="tablist">
                                     <li>
-                                        <a href="#aiImgGenerateTab" class="nav-link link todo-nav__link active" data-bs-toggle="tab" data-bs-target="#" aria-selected="true" role="tab"> AI Image Generator </a>
+                                        <a href="#aiImgGenerateTab" class="nav-link link todo-nav__link active" data-bs-toggle="tab" data-bs-target="#" aria-selected="true" role="tab"> Editions </a>
                                     </li>
                                     <li>
                                         <a href="#generateVideoTab" class="nav-link link todo-nav__link" data-bs-toggle="tab" data-bs-target="#" aria-selected="false" tabindex="-1" role="tab"> Customizable image styles </a>

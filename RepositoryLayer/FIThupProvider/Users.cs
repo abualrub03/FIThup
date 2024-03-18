@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace FIThupProvider
 {
-    public class Student : Core.Disposable
+    public class Users : Core.Disposable
     {
 
-        public List<Entities.Student> getStudentNameByID(int StudentID)
+        public List<Entities.Users> getStudentNameByID(int UserID)
         {
 
             using var DAL2 = new DataAccess.DataAccessLayer();
             DAL2.Parameters = new List<SqlParameter> {
-                new SqlParameter{ ParameterName = "@StudentID", Value =  StudentID },
+                new SqlParameter{ ParameterName = "@UserID", Value =  UserID },
 
             };
-            return DAL2.ExecuteReader<Entities.Student>("spGetStudentNameByID");
+            return DAL2.ExecuteReader<Entities.Users>("spGetUserByID");
         }
     }
 }
