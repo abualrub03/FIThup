@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using ViewModel;
 
 namespace FIThup.Controllers
 {
@@ -10,10 +11,14 @@ namespace FIThup.Controllers
         {
             var ClubRecordHistory = new FIThupProvider.ClubsHistory().getClubHistory(ClubName);
 
+            var LastUpadteUserName = new FIThupProvider.Student().getStudentNameByID(ClubRecordHistory.FirstOrDefault().LastUpdateUser);
+
+            var VM = new ClubViewModel();
+            VM.clubsHistory = ClubRecordHistory;
+            VM.student = LastUpadteUserName;
 
 
-
-            return View("Club",ClubRecordHistory);
+            return View("Club",VM);
         }
         public IActionResult Index()
         {

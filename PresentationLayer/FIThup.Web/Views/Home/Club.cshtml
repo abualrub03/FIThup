@@ -1,4 +1,4 @@
-﻿@model List<Entities.ClubsHistory>
+﻿@model ViewModel.ClubViewModel
 @{
     ViewBag.Title = "Club";
     Layout = "~/Views/Shared/HomeLayout.cshtml";
@@ -25,14 +25,14 @@
                     <div class="d-inline-flex align-items-center py-2 px-4 bg-info-10 bg-opacity-3 rounded-1">
                         <a href="index-7.html" class="link fs-12 clr-white">Home</a>
                         <span class="fs-12 clr-white mx-1">-</span>
-                        <span class="fs-12 clr-white">Blog Details</span>
+                        <span class="fs-12 clr-white">Club Details</span>
                     </div>
-                <h2 class="h3 fw-bold clr-neutral-90 mt-4">test</h2>
+                <h2 class="h3 fw-bold clr-neutral-90 mt-4">@Model.clubsHistory.FirstOrDefault().FullName</h2>
                     <ul class="list list-row gap-5 mt-6">
                         <li class="fs-14 clr-neutral-80 d-flex gap-2">
-                            <i class="bi bi-calendar2-date"></i> Updated On October
+                        <i class="bi bi-calendar2-date"></i> <!--Updated On October--> Last Update @Model.clubsHistory.FirstOrDefault().LastUpdateDateTime
                         </li>
-                        <li class="fs-14 clr-neutral-80 d-flex gap-2"><i class="bi bi-person-circle"></i> By Aminul Islam </li>
+                        <li class="fs-14 clr-neutral-80 d-flex gap-2"><i class="bi bi-person-circle"></i> By @Model.student.FirstOrDefault().FullName</li>
                     </ul>
                 </div>
             </div>
@@ -49,10 +49,19 @@
             <div class="row justify-content-center">
                 <div class="col-xl-8">
                     <img src="/img/blog-details-main.png" alt="image" class="img-fluid rounded-1 object-fit-cover">
-                    <p class="clr-neutral-80 fw-bold fs-18 mt-14 mb-6">Every great engineer knows how to toggle between two fundamentally different, yet equally important styles of work: "Let's wing it" hacking and corporate-level "measure twice, cut once" engineering.</p>
-                    <p class="clr-neutral-80">You may already be familiar with Writebot - an automation platform that enables users to streamline operations within and between more than 5,000 applications without any need for coding. You can automate an action in one app to trigger an action in another platform in a process Writebot calls a Zap. Then there's Jasper. This AI marketing platform shares a common purpose with Writebot - freeing up users time by taking care of routine tasks so they can concentrate on work that demands more creativity and strategic thinking.</p>
+                    
+                    <p class="clr-neutral-80 fw-bold fs-18 mt-14 mb-6">@Model.clubsHistory.FirstOrDefault().ClubInfo</p>
+                    
                     <h4 class="h4 fw-bold clr-neutral-90 mt-10 mb-6">What is an SEO audit?</h4>
-                    <p class="clr-neutral-80">An SEO audit is a meticulous examination of your website's on-page and off-page elements, designed to identify strengths, weaknesses, and opportunities for improvement. This process delves into your site's technical, content, and backlink aspects to enhance its visibility in search engine results . his process delves into content, and backlink aspects to enhance its visibility in search engine results.</p>
+                    <p class="clr-neutral-80">@Model.clubsHistory.FirstOrDefault().ClubChairpersonInfo</p>
+                    
+                    <!--
+                    <p class="clr-neutral-80 fw-bold fs-18 mt-14 mb-6">Every great engineer knows how to toggle between two fundamentally different, yet equally important styles of work: "Let's wing it" hacking and corporate-level "measure twice, cut once" engineering.</p>
+                <p class="clr-neutral-80">You may already be familiar with Writebot - an automation platform that enables users to streamline operations within and between more than 5,000 applications without any need for coding. You can automate an action in one app to trigger an action in another platform in a process Writebot calls a Zap. Then there's Jasper. This AI marketing platform shares a common purpose with Writebot - freeing up users time by taking care of routine tasks so they can concentrate on work that demands more creativity and strategic thinking.</p>
+                <h4 class="h4 fw-bold clr-neutral-90 mt-10 mb-6">What is an SEO audit?</h4>
+                <p class="clr-neutral-80">An SEO audit is a meticulous examination of your website's on-page and off-page elements, designed to identify strengths, weaknesses, and opportunities for improvement. This process delves into your site's technical, content, and backlink aspects to enhance its visibility in search engine results . his process delves into content, and backlink aspects to enhance its visibility in search engine results.</p>
+
+                -->
                     <!--<h4 class="h4 fw-bold clr-neutral-90 mt-10 mb-6">Significance of Performing an SEO Audit</h4>
                     <p class="clr-neutral-80 mb-8">Regular SEO audits are pivotal in maintaining your website's health and competitiveness in the digital landscape. They are essential for several reasons:</p>
                     <ul class="list list-column gap-8">
@@ -268,7 +277,7 @@
                                     <span class="clr-neutral-80 fs-12">UI &amp; UX Designer</span>
                                     <ul class="list list-row gap-5 mt-4 justify-content-center">
                                         <li>
-                                            <a href="#0" class="link clr-neutral-40">
+                                            <a href="#" class="link clr-neutral-40">
                                                 <i class="bi bi-facebook"></i>
                                             </a>
                                         </li>
