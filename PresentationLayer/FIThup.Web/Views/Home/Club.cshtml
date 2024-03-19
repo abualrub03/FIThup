@@ -924,13 +924,13 @@
                                         <a href="#aiImgGenerateTab" class="nav-link link todo-nav__link active" data-bs-toggle="tab" data-bs-target="#" aria-selected="true" role="tab"> Editions </a>
                                     </li>
                                     <li>
-                                        <a href="#generateVideoTab" class="nav-link link todo-nav__link" data-bs-toggle="tab" data-bs-target="#" aria-selected="false" tabindex="-1" role="tab"> Customizable image styles </a>
+                                        <a href="#generateVideoTab" class="nav-link link todo-nav__link" data-bs-toggle="tab" data-bs-target="#" aria-selected="false" tabindex="-1" role="tab"> Workshops </a>
                                     </li>
                                     <li>
-                                        <a href="#removeBgTab" class="nav-link link todo-nav__link" data-bs-toggle="tab" data-bs-target="#" aria-selected="false" tabindex="-1" role="tab"> Update News </a>
+                                        <a href="#removeBgTab" class="nav-link link todo-nav__link" data-bs-toggle="tab" data-bs-target="#" aria-selected="false" tabindex="-1" role="tab"> Competitions </a>
                                     </li>
                                     <li>
-                                        <a href="#trainCustomTab" class="nav-link link todo-nav__link" data-bs-toggle="tab" data-bs-target="#" aria-selected="false" tabindex="-1" role="tab"> Terms &amp; Conditions </a>
+                                        <a href="#trainCustomTab" class="nav-link link todo-nav__link" data-bs-toggle="tab" data-bs-target="#" aria-selected="false" tabindex="-1" role="tab"> Events &amp; More</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -939,22 +939,27 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="aiImgGenerateTab" role="tabpanel">
                                     <div class="accordion custom-accordion custom-accordion--faq mb-8" id="faqAccordionOne">
+                                    @foreach(var i in Model.LastEditions)
+                                    {
                                         <div class="accordion-item border-bottom-0 border-start-0 border-end-0">
                                             <h2 class="accordion-header">
-                                                <button class="accordion-button fs-20 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccordion1" aria-expanded="true"> How does the Type tone AI app work / Where do I start? </button>
+                                                <button class="accordion-button fs-20 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccordion1" aria-expanded="true"> @i.FullName </button>
                                             </h2>
                                             <div id="faqAccordion1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordionOne">
-                                                <div class="accordion-body">
-                                                    <ul class="list gap-4 mb-8">
-                                                        <li> 1. Create an account and write completely free, forever! If you want more features and Tone </li>
-                                                        <li> 2. Log in to the app and choose a template, such as "Article Writing". </li>
-                                                        <li> 3. Fill in the required fields and click Generate the more context output. </li>
+                                                <div class="accordion-body" style="padding-bottom: 40px">
+                                                    <p class="mb-0"> @i.ClubInfo</p>
+                                                    <ul class="" style="    list-style-type: none;">
+                                                        <li class="menu-list mx-4 mx-lg-0">
+                                                            <a href="/Home/ClubView?ClubName=@i.PerviewName"   target="_blank" class="animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1" style="float: inline-end;">
+                                                                <span class="d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded" style=""> View More </span>
+                                                            </a>
+                                                        </li>
                                                     </ul>
-                                                    <p class="mb-0"> Have questions about how the app works? Ask your question to our live chat or send an email and we will help you further. </p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item border-bottom-0 border-start-0 border-end-0">
+                                    }
+                                    <!-- <div class="accordion-item border-bottom-0 border-start-0 border-end-0">
                                             <h2 class="accordion-header">
                                                 <button class="accordion-button fs-20 fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccordion2" aria-expanded="false"> Do you have languages other than English and Dutch? </button>
                                             </h2>
@@ -998,14 +1003,14 @@
                                                     <p class="mb-0"> Have questions about how the app works? Ask your question to our live chat or send an email and we will help you further. </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="generateVideoTab" role="tabpanel">
                                     <div class="accordion custom-accordion custom-accordion--faq mb-8" id="faqAccordionTwo">
                                         <div class="accordion-item border-bottom-0 border-start-0 border-end-0">
                                             <h2 class="accordion-header">
-                                                <button class="accordion-button fs-20 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccordionGV1" aria-expanded="true"> How does the Type tone AI app work / Where do I start? </button>
+                                                <button class="accordion-button fs-20 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccordionGV1" aria-expanded="true"> tesssssssss? </button>
                                             </h2>
                                             <div id="faqAccordionGV1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordionTwo">
                                                 <div class="accordion-body">
