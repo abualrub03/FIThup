@@ -18,6 +18,7 @@ namespace FIThup.Controllers
             VM.Users = LastUpadteUserName;
             VM.TeamMembers = new FIThupProvider.ClubsTeamMembers().getTeamMembersByClubHistoryID(ClubRecordHistory.FirstOrDefault().ClubsUpdateId);
             VM.LastEditions = new FIThupProvider.ClubsHistory().getClubHistoryLastEditions(ClubRecordHistory.FirstOrDefault().PerviewName);
+            VM.workShopWithClubs = new FIThupProvider.WorkShopWithClubs().getWorkShopWithClubs(ClubRecordHistory.FirstOrDefault().ClubsUpdateId);
             return View("Club",VM);
         }
         public IActionResult Index()

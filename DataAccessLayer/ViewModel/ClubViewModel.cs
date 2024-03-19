@@ -8,5 +8,6 @@ namespace ViewModel
         public List<Users> Users { get; set; }
         public List<Users> TeamMembers { get; set; }
         public List<ClubsHistory> LastEditions { get; set; }
+        public List<WorkShopWithClubs> workShopWithClubs { get; set; }
     }
 }

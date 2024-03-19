@@ -1008,7 +1008,86 @@
                                 </div>
                                 <div class="tab-pane fade" id="generateVideoTab" role="tabpanel">
                                     <div class="accordion custom-accordion custom-accordion--faq mb-8" id="faqAccordionTwo">
-                                        <div class="accordion-item border-bottom-0 border-start-0 border-end-0">
+                                    <div class="">
+                                        <div class="row gy-4">
+                                            @foreach(var i in Model.workShopWithClubs){
+                                                <div class="col-12">
+                                                    <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                                                        <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                                            <img src="/img/large-post-1.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                                        </a>
+                                                        <ul class="list list-row gap-5 mt-10">
+                                                            <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                                <i class="bi bi-calendar2-date"></i> @i.WorkShopDateTime
+                                                            </li>
+                                                            
+                                                        </ul>
+                                                        <h3 class="h4 mt-2">
+                                                            <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">@i.Title</a>
+                                                        </h3>
+                                                        <p class="clr-neutral-80 mt-6">@i.SmallDescription</p>
+                                                        <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                                                    </div>
+                                                </div>
+                                            }
+                                           <!-- <div class="col-12">
+                                                <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                                                    <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                                        <img src="/img/large-post-2.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                                    </a>
+                                                    <ul class="list list-row gap-5 mt-10">
+                                                        <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                            <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                    <h3 class="h4 mt-2">
+                                                        <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
+                                                    </h3>
+                                                    <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
+                                                    <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                                                    <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                                        <img src="/img/large-post-3.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                                    </a>
+                                                    <ul class="list list-row gap-5 mt-10">
+                                                        <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                            <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                    <h3 class="h4 mt-2">
+                                                        <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
+                                                    </h3>
+                                                    <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
+                                                    <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                                                    <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                                        <img src="/img/large-post-1.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                                    </a>
+                                                    <ul class="list list-row gap-5 mt-10">
+                                                        <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                            <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                    <h3 class="h4 mt-2">
+                                                        <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
+                                                    </h3>
+                                                    <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
+                                                    <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                                                </div>
+                                            </div>-->
+                                        </div>
+                                        
+                                    </div>
+                                        <!--<div class="accordion-item border-bottom-0 border-start-0 border-end-0">
                                             <h2 class="accordion-header">
                                                 <button class="accordion-button fs-20 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccordionGV1" aria-expanded="true"> tesssssssss? </button>
                                             </h2>
@@ -1082,14 +1161,9 @@
                                                     <p class="mb-0"> Have questions about how the app works? Ask your question to our live chat or send an email and we will help you further. </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
-                                    <a href="#" target="_blank" class="gradient-btn-1 position-relative link d-inline-flex justify-content-center align-items-center gap-2 px-4 py-3 rounded fw-bold text-center z-1 mb-1">
-                                        <span class="d-inline-block">Show More Faq</span>
-                                        <span class="d-inline-block">
-                                            <i class="bi bi-arrow-up-right"></i>
-                                        </span>
-                                    </a>
+                                    
                                 </div>
                                 <div class="tab-pane fade" id="removeBgTab" role="tabpanel">
                                     <div class="accordion custom-accordion custom-accordion--faq mb-8" id="faqAccordionThree">
