@@ -31,6 +31,10 @@ namespace FIThup.Controllers
         {
             return View();
         }
+        public IActionResult CompetitionDetails()
+        {
+            return View("CompetitionDetails");
+        }
         public IActionResult WorkShopDetails(int WorkShopID)
         {
             var VM = new FIThupProvider.WorkShopWithClubs();
