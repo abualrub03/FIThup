@@ -19,5 +19,15 @@ namespace FIThupProvider
             };
             return DAL2.ExecuteReader<Entities.WorkShopWithClubs>("spGetWorkShopWithClubs");
         }
+        public List<Entities.WorkShopWithClubs> getWorkShopDetailsByID(int WorkShopID)
+        {
+
+            using var DAL2 = new DataAccess.DataAccessLayer();
+            DAL2.Parameters = new List<SqlParameter> {
+                new SqlParameter{ ParameterName = "@WorkShopID", Value =  WorkShopID },
+
+            };
+            return DAL2.ExecuteReader<Entities.WorkShopWithClubs>("spGetWorkShopDetailsByID");
+        }
     }
 }

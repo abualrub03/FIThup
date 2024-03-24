@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities;
+using FIThupProvider;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using ViewModel;
 
@@ -28,6 +30,12 @@ namespace FIThup.Controllers
         public IActionResult Club()
         {
             return View();
+        }
+        public IActionResult WorkShopDetails(int WorkShopID)
+        {
+            var VM = new FIThupProvider.WorkShopWithClubs();
+       
+            return View("WorkshopDetails", VM.getWorkShopDetailsByID(WorkShopID).FirstOrDefault());
         }
 
     }
