@@ -1,6 +1,12 @@
-﻿@{
+﻿@model ViewModel.CompetitionDetailsViewModel
+@{
     ViewBag.Title = "CompetitionDetails";
     Layout = "~/Views/Shared/HomeLayout.cshtml";
+    var count = 0;
+    var firstpart = "";
+    var Midpart = "";
+    var Endpart = "";
+
 }
 <div class="hero-4 ">
 
@@ -11,20 +17,85 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-10">
                             <h2 class="mb-6 text-center clr-white fw-extrabold animate-line-3d" style="perspective: 400px;">
-                                <span class="d-inline-block gradient-flow gradient-flow--start"> AI Content </span> Creation &amp; Customer Experience <span class="d-inline-block gradient-flow gradient-flow--end"> Platform </span>
+                                @{
+
+                                    foreach(var i in Model.CompetitonDetails.FirstOrDefault().CompetitionTitle)
+                                    {
+                                        if(i == ' ')
+                                        {
+                                            count++;
+                                        }
+                                    }
+                                    if(count == 0)
+                                    {
+                                        firstpart = Model.CompetitonDetails.FirstOrDefault().CompetitionTitle;
+                                    }else if(count == 1)
+                                    {
+                                        int flag = 0;
+                                        foreach (var i in Model.CompetitonDetails.FirstOrDefault().CompetitionTitle)
+                                        {
+                                            if(i != ' ' && flag == 0)
+                                            {
+                                                firstpart += i;
+                                            }
+                                            else if (i == ' ')
+                                            {
+                                                flag = 1;
+                                            }
+                                            else
+                                            {
+                                                Endpart += i;
+                                            }
+
+                                        }
+
+                                    }
+                                    else if (count >= 2)
+                                    {
+                                        int flag = 0;
+                                        int count2 = 1;
+                                        foreach (var i in Model.CompetitonDetails.FirstOrDefault().CompetitionTitle)
+                                        {
+                                            if (i != ' ' && flag == 0)
+                                            {
+                                                firstpart += i;
+
+                                            }
+                                            else if(i == ' ' && flag == 0)
+                                            {
+                                                flag = 1 ;
+                                            }
+                                            else if( count2!=count ){
+                                                Midpart += i;
+                                                if(i == ' ')
+                                                {
+                                                    count2++;
+                                                }
+                                            }
+                                            else if(count2 == count)
+                                            {
+                                                Endpart += i;
+                                            }
+
+                                        }
+
+                                    }
+
+
+                                }
+                                <span class="d-inline-block gradient-flow gradient-flow--start"> @firstpart </span> <!--Creation &amp; Customer Experience --> @Midpart <span class="d-inline-block gradient-flow gradient-flow--end"><!-- Platform --> @Endpart</span>
                             </h2>
+
                             <p class="mb-0 text-center fw-extrabold ff-1 fs-18 clr-white animate-line-3d" style="perspective: 400px;">
-                                <span class="clr-grad-6">Chat, Code, Cloud, Deployments</span> &amp; more Many Option
+
+                                    <span class="clr-secondary-key fw-bold mb-2 d-inline-block">@Model.CompetitonDetails.FirstOrDefault().CompetitionVersion</span>
+                                
+                                <span class="clr-grad-6 clr-secondary-key fw-bold mb-2 " style="margin: 0 auto;display: table;">@Model.CompetitonDetails.FirstOrDefault().ClubHistoryID</span>
                             </p>
-                            <ul class="list list-row gap-5 mt-6" style="
-    margin: auto;
-    padding: 0;
-    display: table;
-">
+                            <ul class="list list-row gap-5 mt-6" style="margin: auto;padding: 0;display: table;">
                                 <li class="fs-14 clr-neutral-80 d-flex gap-2">
-                                    <i class="bi bi-calendar2-date"></i> <!--Updated On October--> Last Update 10/26/2023 3:30:00 PM
+                                    <i class="bi bi-calendar2-date"></i> <!--Updated On October--> @Model.CompetitonDetails.FirstOrDefault().CompetitionDateTime
                                 </li>
-                                <li class="fs-14 clr-neutral-80 d-flex gap-2"><i class="bi bi-person-circle"></i> By user3</li>
                             </ul>
                         </div>
                     </div>
@@ -59,7 +130,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10 col-xl-6">
-                    <h3 class="mb-0 text-center fw-extrabold clr-neutral-90 animate-line-3d" style="perspective: 400px;"> Why Choose Using AI </h3>
+                    <h3 class="mb-0 text-center fw-extrabold clr-neutral-90 animate-line-3d" style="perspective: 400px;"> The First Three Winners 🏆  </h3>
                 </div>
             </div>
         </div>
@@ -67,7 +138,9 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-12">
-                <div class="choose-section-1">
+                <div class="choose-section-1" style="
+    margin-top: -150px;
+" >
                     <div class="row g-4 justify-content-center">
                         <div class="col-lg-4 d-xl-none">
                             <div class="d-none d-lg-inline-block">
@@ -90,11 +163,7 @@
                             </div>
                         </div>
                     </div>
-                    <h5 class="choose-section-1__title clr-neutral-80 mb-0 animate-text-from-left" style=""> More efficient and <br> more effective. </h5>
-                    <button class="choose-section-1__play-btn fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                        <i class="bi bi-play-fill"></i>
-                    </button>
-                    <img src="/img/choose-section-1-shape-1.png" alt="image" class="img-fluid choose-section-1__shape choose-section-1__shape--1">
+                    
                 </div>
             </div>
             <div class="col-md-4 col-xl-3">

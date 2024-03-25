@@ -32,9 +32,11 @@ namespace FIThup.Controllers
         {
             return View();
         }
-        public IActionResult CompetitionDetails()
+        public IActionResult CompetitionDetails(int CompetitonID)
         {
-            return View("CompetitionDetails");
+            var VM = new CompetitionDetailsViewModel();
+            VM.CompetitonDetails = new FIThupProvider.Competitions().getCompetitionByID(CompetitonID);
+            return View("CompetitionDetails" ,VM);
         }
         public IActionResult WorkShopDetails(int WorkShopID)
         {
