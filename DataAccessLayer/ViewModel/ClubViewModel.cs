@@ -9,5 +9,6 @@ namespace ViewModel
         public List<Users> TeamMembers { get; set; }
         public List<ClubsHistory> LastEditions { get; set; }
         public List<WorkShopWithClubs> workShopWithClubs { get; set; }
+        public List<Entities.Competitions> ClubHistoryCompetitons { get; set; }
     }
 }

@@ -1168,78 +1168,41 @@
                                 <div class="tab-pane fade" id="removeBgTab" role="tabpanel">
                                     <div class="accordion custom-accordion custom-accordion--faq mb-8" id="faqAccordionThree">
                                     <div class="row gy-5">
-                                        <div class="col-12" style="
-">
-                                            <div class="row" style="
-    width: max-content;
-">
-                                                <div class="col-md-4">
-                                                    <a href="blog-details.html" class="d-block">
-                                                        <img src="/img/popular-post-1.png" alt="image" class="img-fluid rounded-4">
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <span class="clr-secondary-key fw-bold mb-2 d-inline-block">Competitions</span>
-                                                    <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
-                                                    <p class="clr-neutral-80 mb-6" style="
-    width: inherit;
-">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                        <!--*************************************************************************-->
 
-                                                    <ul class="list list-lg-row  " style="
-    /* margin: 0 auto; */
-">
-                                                        <li class="menu-list mx-4 mx-lg-0">
-                                                            <a href="login.html" class="animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1">
+                                        @foreach(var i in Model.ClubHistoryCompetitons)
+                                        {
+                                            <div class="col-12" style="">
+                                                <div class="row" style="width: max-content;">
+                                                    <div class="col-md-4">
+                                                        <a href="blog-details.html" class="d-block">
+                                                            <img src="/img/popular-post-1.png" alt="image" class="img-fluid rounded-4">
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        
+                                                        <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">@i.CompetitionTitle </a></h4>
+                                                        <span class="clr-secondary-key fw-bold mb-2 d-inline-block">@i.CompetitionVersion</span>
+                                                        <p class="clr-neutral-80 mb-6" style="width: inherit;">@i.SmallDescription</p>
+                                                        <ul class="list list-lg-row  " style="/* margin: 0 auto; */">
+                                                            <li class="menu-list mx-4 mx-lg-0">
+                                                                <a href="login.html" class="animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1">
 
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-list mx-4 mx-lg-0">
-                                                            <a href="/Home/CompetitionDetails" class="gradient-btn-1 position-relative z-1 link d-inline-flex justify-content-center px-4 py-2 rounded fw-bold text-center"> Get Started </a>
-                                                        </li>
-                                                    </ul>
+                                                                </a>
+                                                            </li>
+                                                            <li class="menu-list mx-4 mx-lg-0">
+                                                                <a href="/Home/CompetitionDetails" class="gradient-btn-1 position-relative z-1 link d-inline-flex justify-content-center px-4 py-2 rounded fw-bold text-center"> View Details</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="blog-details.html" class="d-block">
-                                                        <img src="/img/popular-post-2.png" alt="image" class="img-fluid rounded-4">
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
-                                                    <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
-                                                    <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
-                                                    <ul class="list list-row gap-5">
-                                                        <li class="fs-14 clr-neutral-80 d-flex gap-2">
-                                                            <i class="bi bi-calendar2-date"></i> March 19, 2022
-                                                        </li>
-                                                        <li class="fs-14 clr-neutral-80"> (15) Comments </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="blog-details.html" class="d-block">
-                                                        <img src="/img/popular-post-3.png" alt="image" class="img-fluid rounded-4">
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
-                                                    <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
-                                                    <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
-                                                    <ul class="list list-row gap-5">
-                                                        <li class="fs-14 clr-neutral-80 d-flex gap-2">
-                                                            <i class="bi bi-calendar2-date"></i> March 19, 2022
-                                                        </li>
-                                                        <li class="fs-14 clr-neutral-80"> (15) Comments </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        }
+
+
+
+                                        <!--*************************************************************************-->
+
                                     </div>
                                     </div>
                                 </div>
