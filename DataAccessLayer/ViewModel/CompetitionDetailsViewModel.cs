@@ -10,8 +10,7 @@ namespace ViewModel
     public class CompetitionDetailsViewModel
     {
         public List<Competitions> CompetitonDetails { get; set; }
-        //ublic List<Competitions> CompetitionTeams { get; set; }
-
+        public List<CompetitionsTeams> CompetitionTeams { get; set; }
 
     }
 }

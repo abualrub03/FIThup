@@ -6,6 +6,10 @@
     var firstpart = "";
     var Midpart = "";
     var Endpart = "";
+    /////////////////////////////////////
+    string FirstPlaceTeamName = ""; string SecondPlaceTeamName = ""; string ThirdPlaceTeamName = "";
+
+
 
 }
 <div class="hero-4 ">
@@ -166,31 +170,103 @@
                     
                 </div>
             </div>
+            <!-- ******************************************************************** -->
+
+            @{
+                foreach(var i in Model.CompetitionTeams)
+                {
+                    if(i.CompetitionsTeamMembers.FirstOrDefault().Place == 1)
+                    {
+                        FirstPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
+                    }
+                    else if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 2)
+                    {
+                        SecondPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
+                    }
+                    else if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 3)
+                    {
+                        ThirdPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
+                    }
+                }
+            }
+
+            <!-- ******************************************************************** -->
+
+
+
+
             <div class="col-md-4 col-xl-3">
                 <div class="px-lg-6 py-lg-8 rounded-3 fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                    <div class="d-grid place-content-center w-14 h-14 bg-neutral-variant-30 bg-opacity-5 rounded mb-6">
-                        <img src="/img/icon-hourglass.png" alt="image" class="img-fluid">
+                    <div style="color: gold;font-size: x-large;" class="d-grid place-content-center w-14 h-14 bg-neutral-variant-30 bg-opacity-5 rounded mb-6">
+                        #2
                     </div>
-                    <h6 class="clr-neutral-90 mb-2 reveal-text" style=""> Time reduced on first </h6>
-                    <p class="mb-0 clr-neutral-80 fs-14 fw-medium animate-text-from-right" style=""> Create your projects and start tracking time immediately according </p>
+                    <h6 class="clr-neutral-90 mb-2 reveal-text" style=""> @SecondPlaceTeamName </h6>
+                    <p class="mb-0 clr-neutral-80 fs-14 fw-medium animate-text-from-right" style="">
+
+                        <ul style="
+    color: #f8f9fa;
+" >
+                            @foreach (var i in Model.CompetitionTeams)
+                            {
+                                if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 2)
+                                {
+                                    foreach (var ii in i.CompetitionsTeamMembers)
+                                    {
+                                        <li>@ii.FullName</li>
+                                    }
+                                }
+                            }
+                        </ul>
+                    
+                    </p>
                 </div>
             </div>
             <div class="col-md-4 col-xl-6">
                 <div class="px-lg-6 py-lg-8 rounded-3 choose-section-1__card fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                    <div class="d-grid place-content-center w-14 h-14 bg-neutral-variant-30 bg-opacity-5 rounded mb-6">
-                        <img src="/img/icon-pen-ruler.png" alt="image" class="img-fluid">
+                    <div style="color: gold;font-size: x-large;" class="d-grid place-content-center w-14 h-14 bg-neutral-variant-30 bg-opacity-5 rounded mb-6">
+                        #1
                     </div>
-                    <h6 class="clr-neutral-90 mb-2 reveal-text" style=""> Ai content writing easy to use </h6>
-                    <p class="mb-0 clr-neutral-80 fs-14 fw-medium animate-text-from-right" style=""> Whether you work with 1 team member or 1,000, you can bring the whole team together, and simplify your HR stack with Remote. </p>
+                    <h6 class="clr-neutral-90 mb-2 reveal-text" style=""> @FirstPlaceTeamName </h6>
+                    <p class="mb-0 clr-neutral-80 fs-14 fw-medium animate-text-from-right" style="">
+
+                        <ul style="
+    color: #f8f9fa;
+">
+                            @foreach (var i in Model.CompetitionTeams)
+                            {
+                                if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 1)
+                                {
+                                    foreach (var ii in i.CompetitionsTeamMembers)
+                                    {
+                                        <li>@ii.FullName</li>
+                                    }
+                                }
+                            }
+                        </ul>
+                    </p>
                 </div>
             </div>
             <div class="col-md-4 col-xl-3">
                 <div class="px-lg-6 py-lg-8 rounded-3 fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                    <div class="d-grid place-content-center w-14 h-14 bg-neutral-variant-30 bg-opacity-5 rounded mb-6">
-                        <img src="/img/icon-comment-dots.png" alt="image" class="img-fluid">
+                    <div style="color: gold;font-size: x-large;" class="d-grid place-content-center w-14 h-14 bg-neutral-variant-30 bg-opacity-5 rounded mb-6">
+                        #3
                     </div>
-                    <h6 class="clr-neutral-90 mb-2 reveal-text" style=""> Ai ChatBot generator </h6>
-                    <p class="mb-0 clr-neutral-80 fs-14 fw-medium animate-text-from-right" style=""> Create your projects and start tracking time immediately according </p>
+                    <h6 class="clr-neutral-90 mb-2 reveal-text" style=""> @ThirdPlaceTeamName </h6>
+                    <p class="mb-0 clr-neutral-80 fs-14 fw-medium animate-text-from-right" style="">
+                    <ul style="
+    color: #f8f9fa;
+" >
+                            @foreach (var i in Model.CompetitionTeams)
+                            {
+                                if(i.CompetitionsTeamMembers.FirstOrDefault().Place == 3)
+                                {
+                                    foreach (var ii in i.CompetitionsTeamMembers)
+                                    {
+                                        <li>@ii.FullName</li>
+                                    }
+                                }
+                            }
+                        </ul> </p>
                 </div>
             </div>
         </div>

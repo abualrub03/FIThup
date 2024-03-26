@@ -8,6 +8,7 @@ namespace Entities
 {
     public class ClubsTeamMembers
     {
+
         public int ClubsTeamMemberID { get; set; }
         public int StudentID { get; set; }
         public int ClubsHistoryID { get; set; } 

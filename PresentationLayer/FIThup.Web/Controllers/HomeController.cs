@@ -36,6 +36,7 @@ namespace FIThup.Controllers
         {
             var VM = new CompetitionDetailsViewModel();
             VM.CompetitonDetails = new FIThupProvider.Competitions().getCompetitionByID(CompetitonID);
+            VM.CompetitionTeams = new FIThupProvider.Competitions().getFirstThreePlacesInCompetionByID(CompetitonID);
             return View("CompetitionDetails" ,VM);
         }
         public IActionResult WorkShopDetails(int WorkShopID)
