@@ -48,13 +48,11 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
-                    <img src="/img/blog-details-main.png" alt="image" class="img-fluid rounded-1 object-fit-cover">
+                    <img src="/img/@Model.clubsHistory.FirstOrDefault().ClubImageName" alt="image" class="img-fluid rounded-1 object-fit-cover">
                     
                     <p class="clr-neutral-80 fw-bold fs-18 mt-14 mb-6">@Model.clubsHistory.FirstOrDefault().ClubInfo</p>
                     
-                    <h4 class="h4 fw-bold clr-neutral-90 mt-10 mb-6">What is an SEO audit?</h4>
-                    <p class="clr-neutral-80">@Model.clubsHistory.FirstOrDefault().ClubChairpersonInfo</p>
-                    
+                
                     <!--
                     <p class="clr-neutral-80 fw-bold fs-18 mt-14 mb-6">Every great engineer knows how to toggle between two fundamentally different, yet equally important styles of work: "Let's wing it" hacking and corporate-level "measure twice, cut once" engineering.</p>
                 <p class="clr-neutral-80">You may already be familiar with Writebot - an automation platform that enables users to streamline operations within and between more than 5,000 applications without any need for coding. You can automate an action in one app to trigger an action in another platform in a process Writebot calls a Zap. Then there's Jasper. This AI marketing platform shares a common purpose with Writebot - freeing up users time by taking care of routine tasks so they can concentrate on work that demands more creativity and strategic thinking.</p>
@@ -274,7 +272,7 @@
                             {
                                 <li>
                                     <div class="team-card rounded-3 py-12 px-6 text-center">
-                                        <img src="/img/team-1.png" alt="image" class="img-fluid">
+                                        <img src="/img/@Model.TeamMembers[a].ProfilePictureName" alt="image" class="img-fluid">
                                         <h5 class="clr-neutral-90 fs-18 mb-1 mt-5">@Model.TeamMembers[a].FullName</h5>
                                         <span class="clr-neutral-80 fs-12">UI &amp; UX Designer</span>
                                         <ul class="list list-row gap-5 mt-4 justify-content-center">
