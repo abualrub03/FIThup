@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entities
+﻿namespace Entities
 {
-    public class WorkShopWithClubs
+    public class WorkShopWithClubs 
     {
         public int  WorkShopID {  get; set; }
         public string ImageName                {  get; set; }

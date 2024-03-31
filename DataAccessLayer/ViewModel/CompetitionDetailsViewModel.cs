@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ViewModel
 {
-    public class CompetitionDetailsViewModel
+    public class CompetitionDetailsViewModel : LayoutViewModel
     {
         public List<Competitions> CompetitonDetails { get; set; }
         public List<CompetitionsTeams> CompetitionTeams { get; set; }

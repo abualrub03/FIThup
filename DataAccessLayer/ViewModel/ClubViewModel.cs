@@ -2,7 +2,7 @@
 
 namespace ViewModel
 {
-    public class ClubViewModel
+    public class ClubViewModel  : LayoutViewModel
     {
         public List<ClubsHistory> clubsHistory {  get; set; }
         public List<Users> Users { get; set; }

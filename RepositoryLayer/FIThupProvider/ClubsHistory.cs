@@ -5,12 +5,12 @@ namespace FIThupProvider
     public class ClubsHistory : Core.Disposable 
     {
         
-        public List<Entities.ClubsHistory> getClubHistory(string ClubName)
+        public List<Entities.ClubsHistory> getClubHistory(int ClubID)
         {
          
             using var DAL2 = new DataAccess.DataAccessLayer();
             DAL2.Parameters = new List<SqlParameter> {
-                new SqlParameter{ ParameterName = "@PerviewName", Value =  ClubName },
+                new SqlParameter{ ParameterName = "@ClubID", Value =  ClubID },
              
             };
             return DAL2.ExecuteReader<Entities.ClubsHistory>("spGetClubHistory");

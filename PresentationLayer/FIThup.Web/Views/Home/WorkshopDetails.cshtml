@@ -1,4 +1,4 @@
-﻿@model Entities.WorkShopWithClubs
+﻿@model ViewModel.WorkShopWithClubsViewModel
 @{
     ViewBag.Title = "WorkshopDetails";
     Layout = "~/Views/Shared/HomeLayout.cshtml";
@@ -13,11 +13,11 @@
                     <span class="fs-12 clr-white mx-1">-</span>
                     <span class="fs-12 clr-white">Blog Details</span>
                 </div>
-                <h2 class="h3 fw-bold clr-neutral-90 mt-4">@Model.Title</h2>
+                <h2 class="h3 fw-bold clr-neutral-90 mt-4">@Model.CompetitonDetails.FirstOrDefault().Title</h2>
                 
                 <ul class="list list-row gap-5 mt-6">
                     <li class="fs-14 clr-neutral-80 d-flex gap-2">
-                        <i class="bi bi-calendar2-date"></i> @Model.WorkShopDateTime
+                        <i class="bi bi-calendar2-date"></i> @Model.CompetitonDetails.FirstOrDefault().WorkShopDateTime
                     </li>
                 </ul> 
             </div>
@@ -34,9 +34,9 @@
         <div class="row justify-content-center">
             <div class="col-xl-8">
                 <img src="/img/blog-details-main.png" alt="image" class="img-fluid rounded-1 object-fit-cover">
-                <p class="clr-neutral-80 fw-bold fs-18 mt-14 mb-6">@Model.SmallDescription</p>
+                <p class="clr-neutral-80 fw-bold fs-18 mt-14 mb-6">@Model.CompetitonDetails.FirstOrDefault().SmallDescription</p>
                 <h4 class="h4 fw-bold clr-neutral-90 mt-10 mb-6">What is an SEO audit?</h4>
-                <p class="clr-neutral-80">@Model.LongDescription</p>
+                <p class="clr-neutral-80">@Model.CompetitonDetails.FirstOrDefault().LongDescription</p>
                
                
                 <!--

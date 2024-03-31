@@ -173,21 +173,23 @@
             <!-- ******************************************************************** -->
 
             @{
-                foreach(var i in Model.CompetitionTeams)
-                {
-                    if(i.CompetitionsTeamMembers.FirstOrDefault().Place == 1)
+                
+                    foreach (var i in Model.CompetitionTeams)
                     {
-                        FirstPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
+                        if (i.CompetitionsTeamMembers.FirstOrDefault().Place != 1)
+                        {
+                            FirstPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
+                        }
+                        else if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 2)
+                        {
+                            SecondPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
+                        }
+                        else if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 3)
+                        {
+                            ThirdPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
+                        }
                     }
-                    else if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 2)
-                    {
-                        SecondPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
-                    }
-                    else if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 3)
-                    {
-                        ThirdPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
-                    }
-                }
+                
             }
 
             <!-- ******************************************************************** -->

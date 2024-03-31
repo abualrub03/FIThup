@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model ViewModel.LayoutViewModel
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -73,55 +74,19 @@
                                 <li class="menu-list">
                                     <a href="#" class="link menu-link has-sub"> Clubs </a>
                                     <ul class="list menu-sub">
-                                        <li class="menu-sub-list">
-                                            <a href="/Home/ClubView?ClubName=GDSC 24 2" class="link menu-sub-link gap-4">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/GDSClogo.png" alt="image" class="img-fluid" width="30px">
-                                                </span> GDSC ASPU
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-2.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-saas-icon.png" alt="image" class="img-fluid">
-                                                </span> AI SaaS
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-3.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-chatbot-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Chatbot
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-4.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-content-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Content Creator
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-5.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-voice-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Voice Generate
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-6.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-video-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Video Generator
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-7.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-saas-icon-2.png" alt="image" class="img-fluid">
-                                                </span> AI Writebot
-                                            </a>
-                                        </li>
+                                        <!-- ********************************************************* -->
+                                        @foreach(var i in Model.clubs)
+                                        {
+                                            
+                                            <li class="menu-sub-list">
+                                                <a href="/Home/ClubView?ClubID=@i.ClubsUpdateId" class="link menu-sub-link gap-4">
+                                                    <span class="d-none d-lg-inline-block">
+                                                        <img src="/img/@i.ClubLogoImageName" alt="image" class="img-fluid" width="30px">
+                                                    </span> @i.ClubName
+                                                </a>
+                                            </li>
+                                        }
+                                        <!-- ********************************************************* -->
                                     </ul>
                                 </li>
                                 <li class="menu-list">
