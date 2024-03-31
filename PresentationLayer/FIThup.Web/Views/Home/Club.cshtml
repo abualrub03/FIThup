@@ -258,7 +258,9 @@
                         <div class="w-14 h-14 bg-primary-key rounded-circle d-flex align-items-center justify-content-center clr-primary-key fs-24 bg-opacity-2">
                             <i class="bi bi-people-fill"></i>
                         </div>
-                        <h3 class="clr-neutral-90 h3 fw-bold mb-0">Team Members</h3>
+                        <h3 class="clr-neutral-90 h3 fw-bold mb-0" style="
+    z-index: 1;
+" >Team Members</h3>
                     </div>
                 </div>
             </div>
@@ -274,7 +276,7 @@
                                     <div class="team-card rounded-3 py-12 px-6 text-center">
                                         <img src="/img/@Model.TeamMembers[a].ProfilePictureName" alt="image" class="img-fluid">
                                         <h5 class="clr-neutral-90 fs-18 mb-1 mt-5">@Model.TeamMembers[a].FullName</h5>
-                                        <span class="clr-neutral-80 fs-12">UI &amp; UX Designer</span>
+                                        <span class="clr-neutral-80 fs-12">@Model.clubsHistory.FirstOrDefault().PerviewName Member</span>
                                         <ul class="list list-row gap-5 mt-4 justify-content-center">
                                             <li>
                                                 <a href="#" class="link clr-neutral-40">
@@ -288,7 +290,7 @@
                                             </li>
                                             <li>
                                                 <a href="#0" class="link clr-neutral-40">
-                                                    <i class="bi bi-twitter"></i>
+                                                    <i class="bi bi-github"></i>
                                                 </a>
                                             </li>
                                             <li>
@@ -571,7 +573,7 @@
                             {
                                 <li>
                                     <div class="team-card rounded-3 py-12 px-6 text-center">
-                                        <img src="/img/team-1.png" alt="image" class="img-fluid">
+                                        <img src="/img/@Model.TeamMembers[a].ProfilePictureName" alt="image" class="img-fluid">
                                         <h5 class="clr-neutral-90 fs-18 mb-1 mt-5">@Model.TeamMembers[a].FullName</h5>
                                         <span class="clr-neutral-80 fs-12">UI &amp; UX Designer</span>
                                         <ul class="list list-row gap-5 mt-4 justify-content-center">
@@ -895,7 +897,9 @@
                     </div>
                 </div>
             </div>
-            <img src="/img/team-section-line.png" alt="image" class="img-fluid team-section-line">
+            <img src="/img/team-section-line.png" alt="image" class="img-fluid team-section-line" style="
+    width: -webkit-fill-available;
+"   >
         </div>
     </div>
     <img src="/img/team-section-shape.png" alt="image" class="img-fluid team-section-shape">
