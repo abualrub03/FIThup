@@ -272,32 +272,53 @@
                         <ul class="list list-row gap-5 scroller-x__list">
                             @for(var a = 0 ; a < Model.TeamMembers.Count() / 2 ;a++)
                             {
-                                <li>
+                                <li style="display: grid;">
                                     <div class="team-card rounded-3 py-12 px-6 text-center">
-                                        <img src="/img/@Model.TeamMembers[a].ProfilePictureName" alt="image" class="img-fluid">
+                                        <img src="/img/@Model.TeamMembers[a].ProfilePictureName" alt="image" class="img-fluid" style="opacity: 0.8;">
                                         <h5 class="clr-neutral-90 fs-18 mb-1 mt-5">@Model.TeamMembers[a].FullName</h5>
                                         <span class="clr-neutral-80 fs-12">@Model.clubsHistory.FirstOrDefault().PerviewName Member</span>
                                         <ul class="list list-row gap-5 mt-4 justify-content-center">
-                                            <li>
-                                                <a href="#" class="link clr-neutral-40">
-                                                    <i class="bi bi-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#0" class="link clr-neutral-40">
-                                                    <i class="bi bi-instagram"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#0" class="link clr-neutral-40">
-                                                    <i class="bi bi-github"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#0" class="link clr-neutral-40">
-                                                    <i class="bi bi-linkedin"></i>
-                                                </a>
-                                            </li>
+                                            @if (Model.TeamMembers[a].FacebookAccountLink != null)
+                                            {
+                                                <li>
+                                                    <a href="@Model.TeamMembers[a].FacebookAccountLink" class="link clr-neutral-40">
+                                                        <i class="bi bi-facebook"></i>
+                                                    </a>
+                                                </li>
+                                            }
+
+
+
+                                            @if (Model.TeamMembers[a].InstagramAccountLink != null)
+                                            {
+                                                <li>
+                                                    <a href="@Model.TeamMembers[a].InstagramAccountLink" class="link clr-neutral-40">
+                                                        <i class="bi bi-instagram"></i>
+                                                    </a>
+                                                </li>
+                                            }
+
+
+
+                                            @if (Model.TeamMembers[a].GitHupAccountLink != null)
+                                            {
+                                                <li>
+                                                    <a href="@Model.TeamMembers[a].GitHupAccountLink" class="link clr-neutral-40">
+                                                        <i class="bi bi-github"></i>
+                                                    </a>
+                                                </li>
+                                            }
+
+
+                                            @if (Model.TeamMembers[a].LinkedInAccountLink != null)
+                                            {
+                                                <li>
+                                                    <a href="@Model.TeamMembers[a].LinkedInAccountLink" class="link clr-neutral-40">
+                                                        <i class="bi bi-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                            }
+
                                         </ul>
                                     </div>
                                 </li>
@@ -571,32 +592,53 @@
                         <ul class="list list-row gap-5 scroller-x__list">
                             @for (var a = Model.TeamMembers.Count()/2; a < Model.TeamMembers.Count() ; a++)
                             {
-                                <li>
+                                <li style="display: grid;" >
                                     <div class="team-card rounded-3 py-12 px-6 text-center">
-                                        <img src="/img/@Model.TeamMembers[a].ProfilePictureName" alt="image" class="img-fluid">
+                                        <img src="/img/@Model.TeamMembers[a].ProfilePictureName" style="opacity: 0.8;" alt="image" class="img-fluid">
                                         <h5 class="clr-neutral-90 fs-18 mb-1 mt-5">@Model.TeamMembers[a].FullName</h5>
                                         <span class="clr-neutral-80 fs-12">UI &amp; UX Designer</span>
                                         <ul class="list list-row gap-5 mt-4 justify-content-center">
-                                            <li>
-                                                <a href="#" class="link clr-neutral-40">
-                                                    <i class="bi bi-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#0" class="link clr-neutral-40">
-                                                    <i class="bi bi-instagram"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#0" class="link clr-neutral-40">
-                                                    <i class="bi bi-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#0" class="link clr-neutral-40">
-                                                    <i class="bi bi-linkedin"></i>
-                                                </a>
-                                            </li>
+                                         
+                                                @if(Model.TeamMembers[a].FacebookAccountLink != null){
+                                                <li>
+                                                    <a href="@Model.TeamMembers[a].FacebookAccountLink" class="link clr-neutral-40">
+                                                        <i class="bi bi-facebook"></i>
+                                                    </a>
+                                                     </li>
+                                                }
+                                                
+                                           
+                                            
+                                                @if( Model.TeamMembers[a].InstagramAccountLink != null){
+                                                <li>
+                                                    <a href="@Model.TeamMembers[a].InstagramAccountLink" class="link clr-neutral-40">
+                                                        <i class="bi bi-instagram"></i>
+                                                    </a>
+                                                    </li>
+                                                }
+                                                
+                                            
+                                            
+                                                @if (Model.TeamMembers[a].GitHupAccountLink != null)
+                                                {
+                                                <li>
+                                                    <a href="@Model.TeamMembers[a].GitHupAccountLink" class="link clr-neutral-40">
+                                                        <i class="bi bi-github"></i>
+                                                    </a>
+                                                     </li>
+                                                }
+                                           
+                                           
+                                                @if (Model.TeamMembers[a].LinkedInAccountLink != null)
+                                                {
+                                                <li>
+                                                    <a href="@Model.TeamMembers[a].LinkedInAccountLink" class="link clr-neutral-40">
+                                                        <i class="bi bi-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                                }
+                                               
+                                            
                                         </ul>
                                     </div>
                                 </li>
@@ -897,9 +939,7 @@
                     </div>
                 </div>
             </div>
-            <img src="/img/team-section-line.png" alt="image" class="img-fluid team-section-line" style="
-    width: -webkit-fill-available;
-"   >
+            
         </div>
     </div>
     <img src="/img/team-section-shape.png" alt="image" class="img-fluid team-section-shape">
