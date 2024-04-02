@@ -58,6 +58,17 @@ namespace FIThup.Controllers
 
             return View("WorkshopDetails", VM);
         }
+        public IActionResult EventsAndUpComingsDetails(int EventsAndUpComingsID)
+        {
+            var provider = new FIThupProvider.WorkShopWithClubs();
+
+            var VM = new ViewModel.WorkShopWithClubsViewModel();
+         //   VM.CompetitonDetails = provider.getWorkShopDetailsByID(WorkShopID);
+            VM.clubs = new FIThupProvider.Clubs().getClubsList();
+
+
+            return View("EventsAndUpComingsDetails", VM);
+        }
 
     }
 }

@@ -1250,66 +1250,36 @@
                                 </div>
                                 <div class="tab-pane fade" id="trainCustomTab" role="tabpanel">
                                     <div class="accordion custom-accordion custom-accordion--faq mb-8" id="faqAccordionFour">
-                                        <div class="accordion-item border-bottom-0 border-start-0 border-end-0">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button fs-20 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccordionTC1" aria-expanded="true"> How does the Type tone AI app work / Where do I start? </button>
-                                            </h2>
-                                            <div id="faqAccordionTC1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordionFour">
-                                                <div class="accordion-body">
-                                                    <ul class="list gap-4 mb-8">
-                                                        <li> 1. Create an account and write completely free, forever! If you want more features and Tone </li>
-                                                        <li> 2. Log in to the app and choose a template, such as "Article Writing". </li>
-                                                        <li> 3. Fill in the required fields and click Generate the more context output. </li>
-                                                    </ul>
-                                                    <p class="mb-0"> Have questions about how the app works? Ask your question to our live chat or send an email and we will help you further. </p>
-                                                </div>
+                                    <div class="accordion custom-accordion custom-accordion--faq mb-8" id="faqAccordionTwo">
+                                        <div class="">
+                                            <div class="row gy-4">
+                                                @foreach (var i in Model.workShopWithClubs)
+                                                {
+                                                    <div class="col-12">
+                                                        <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                                                            <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                                                <img src="/img/large-post-1.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                                            </a>
+                                                            <ul class="list list-row gap-5 mt-10">
+                                                                <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                                    <i class="bi bi-calendar2-date"></i> @i.WorkShopDateTime
+                                                                </li>
+
+                                                            </ul>
+                                                            <h3 class="h4 mt-2">
+                                                                <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">@i.Title</a>
+                                                            </h3>
+                                                            <p class="clr-neutral-80 mt-6">@i.SmallDescription</p>
+                                                            <a href="/Home/WorkShopDetails?WorkShopID=@i.WorkShopID" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                
                                             </div>
+
                                         </div>
-                                        <div class="accordion-item border-bottom-0 border-start-0 border-end-0">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button fs-20 fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccordionTC2" aria-expanded="false"> Do you have languages other than English and Dutch? </button>
-                                            </h2>
-                                            <div id="faqAccordionTC2" class="accordion-collapse collapse" data-bs-parent="#faqAccordionFour">
-                                                <div class="accordion-body">
-                                                    <ul class="list gap-4 mb-8">
-                                                        <li> 1. Create an account and write completely free, forever! If you want more features and Tone </li>
-                                                        <li> 2. Log in to the app and choose a template, such as "Article Writing". </li>
-                                                        <li> 3. Fill in the required fields and click Generate the more context output. </li>
-                                                    </ul>
-                                                    <p class="mb-0"> Have questions about how the app works? Ask your question to our live chat or send an email and we will help you further. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item border-bottom-0 border-start-0 border-end-0">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button fs-20 fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccordionTC3" aria-expanded="false"> What paid subscription would you recommend to me? </button>
-                                            </h2>
-                                            <div id="faqAccordionTC3" class="accordion-collapse collapse" data-bs-parent="#faqAccordionFour">
-                                                <div class="accordion-body">
-                                                    <ul class="list gap-4 mb-8">
-                                                        <li> 1. Create an account and write completely free, forever! If you want more features and Tone </li>
-                                                        <li> 2. Log in to the app and choose a template, such as "Article Writing". </li>
-                                                        <li> 3. Fill in the required fields and click Generate the more context output. </li>
-                                                    </ul>
-                                                    <p class="mb-0"> Have questions about how the app works? Ask your question to our live chat or send an email and we will help you further. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item border-bottom-0 border-start-0 border-end-0">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button fs-20 fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccordionTC4" aria-expanded="false"> How exactly does this AI work and how can it write texts so well? </button>
-                                            </h2>
-                                            <div id="faqAccordionTC4" class="accordion-collapse collapse" data-bs-parent="#faqAccordionFour">
-                                                <div class="accordion-body">
-                                                    <ul class="list gap-4 mb-8">
-                                                        <li> 1. Create an account and write completely free, forever! If you want more features and Tone </li>
-                                                        <li> 2. Log in to the app and choose a template, such as "Article Writing". </li>
-                                                        <li> 3. Fill in the required fields and click Generate the more context output. </li>
-                                                    </ul>
-                                                    <p class="mb-0"> Have questions about how the app works? Ask your question to our live chat or send an email and we will help you further. </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1321,4 +1291,3 @@
         
     </section>
     
-  <!-- teeeeeeeeeeeeeeeeeeest -->
