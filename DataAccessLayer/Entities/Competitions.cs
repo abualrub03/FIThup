@@ -13,7 +13,6 @@ namespace Entities
         public string CompetitionTitle  {set; get;}
         public string CompetitionVersion   {set; get;}
         public DateTime CompetitionDateTime {set; get;}
-        public string MainCompetitionImageTitle {set; get;}
         public string SmallDescription {set; get;}
         public int ClubHistoryID { set; get; }
     }
