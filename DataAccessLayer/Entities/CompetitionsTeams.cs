@@ -9,6 +9,7 @@ namespace Entities
     public class CompetitionsTeams
     {
         public List<CompetitionsTeamMembers> CompetitionsTeamMembers {  get; set; }
+      
         public CompetitionsTeams(List<CompetitionsTeamMembers> CT)
         {
             CompetitionsTeamMembers = CT;

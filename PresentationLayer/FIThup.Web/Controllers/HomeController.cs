@@ -11,7 +11,7 @@ namespace FIThup.Controllers
     {
 
         public IActionResult ClubView(int ClubID)
-        {
+            {
             var VM = new ClubViewModel();
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
             VM.clubsHistory = new FIThupProvider.ClubsHistory().getClubHistory(ClubID);

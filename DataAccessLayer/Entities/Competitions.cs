@@ -15,5 +15,7 @@ namespace Entities
         public DateTime CompetitionDateTime {set; get;}
         public string SmallDescription {set; get;}
         public int ClubHistoryID { set; get; }
+
+        public string MainCompetitonImage { set; get;}  
     }
 }

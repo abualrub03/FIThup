@@ -2,6 +2,10 @@
 @{
     ViewBag.Title = "Club";
     Layout = "~/Views/Shared/HomeLayout.cshtml";
+    var counter = 0;
+    string TempParagraph = "";
+    string tempWord2 = "";
+    string tempWord3 = "";
 }
 
 <head>
@@ -1215,17 +1219,41 @@
                                         @foreach(var i in Model.ClubHistoryCompetitons)
                                         {
                                             <div class="col-12" style="">
-                                                <div class="row" style="width: max-content;">
+                                                <div class="row" >
                                                     <div class="col-md-4">
                                                         <a href="blog-details.html" class="d-block">
-                                                            <img src="/img/popular-post-1.png" alt="image" class="img-fluid rounded-4">
+                                                            <img src="/img/@i.MainCompetitonImage" alt="image" class="img-fluid rounded-4">
                                                         </a>
                                                     </div>
                                                     <div class="col-md-7">
                                                         
-                                                        <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">@i.CompetitionTitle </a></h4>
+                                                        <h4 class=" -24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">@i.CompetitionTitle </a></h4>
                                                         <span class="clr-secondary-key fw-bold mb-2 d-inline-block">@i.CompetitionVersion</span>
-                                                        <p class="clr-neutral-80 mb-6" style="width: inherit;">@i.SmallDescription</p>
+                                                        
+                                                        @foreach(var ii in i.SmallDescription)
+                                                        {
+                                                            if(ii == ' ')
+                                                            {
+                                                                counter++;
+                                                            }
+                                                            if ( counter < 11)
+                                                            {
+                                                                
+                                                                TempParagraph += ii;
+                                                            }
+                                                            else if( counter < 12 )
+                                                            {
+                                                                
+                                                                tempWord2 += ii;
+
+                                                            }
+                                                            else if ( counter < 13)
+                                                            {
+                                                                tempWord3 += ii;
+                                                            }
+
+                                                        }
+                                                        <p class="clr-neutral-80 mb-6" style="width: inherit;"> @TempParagraph <span style="opacity:0.8;"> @tempWord2</span> <span style="opacity:0.5;"> @tempWord3 ... </span> </p>
                                                         <ul class="list list-lg-row  " style="/* margin: 0 auto; */">
                                                             <li class="menu-list mx-4 mx-lg-0">
                                                                 <a href="#" class="animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1">

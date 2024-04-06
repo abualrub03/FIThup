@@ -109,7 +109,7 @@
             <div class="container">
                 <div class="row g-4">
                     <div class="col-12">
-                        <div class="top-shadow section-space-sm-y rounded-4 bg-black position-relative z-1 overflow-hidden fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <div class="top-shadow section-space-sm-y rounded-4 bg-black position-relative z-1 overflow-hidden fadeIn_bottom" style="translate: none;rotate: none;scale: none;transform: translate(0px, 0px);opacity: 1;width: 800px;/* padding: 100px; */margin: 0 auto;padding-right: 120px;padding-left: 120px;">
                             <div class="row g-4 align-items-center" style="
 ">
 
@@ -117,7 +117,7 @@
     width: -webkit-fill-available;
 ">
                                     <div class="text-center">
-                                        <img src="/img/hero-4-img.webp" alt="image" class="img-fluid" style="
+                                        <img src="/img/@Model.CompetitonDetails.FirstOrDefault().MainCompetitonImage" alt="image" class="img-fluid" style="
 ">
                                     </div>
                                 </div>
@@ -144,9 +144,11 @@
         <div class="row g-4">
             <div class="col-12">
                 <div class="choose-section-1" style="
-    margin-top: -150px;
-" >
-                    <div class="row g-4 justify-content-center">
+    margin-top: -250px;
+">
+                    <div class="row g-4 justify-content-center" style="
+    padding: 150px;
+">
                         <div class="col-lg-4 d-xl-none">
                             <div class="d-none d-lg-inline-block">
                                 <img src="/img/choose-section-1-img-2.png" alt="image" class="img-fluid">
@@ -157,9 +159,30 @@
                                 <img src="/img/choose-section-1-shape-2.png" alt="image" class="img-fluid choose-section-1__shape choose-section-1__shape--2 fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
                                 <img src="/img/choose-section-1-shape-3.png" alt="image" class="img-fluid choose-section-1__shape choose-section-1__shape--3 fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(-50%, 0%); opacity: 1;">
                                 <img src="/img/choose-section-1-shape-4.png" alt="image" class="img-fluid choose-section-1__shape choose-section-1__shape--4 fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                <img src="/img/choose-section-1-img-2.png" alt="image" class="img-fluid choose-section-1__img choose-section-1__img--1 d-none d-xl-block fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(-450.985px, -186.547px) rotate(-8.99973deg); opacity: 1;">
-                                <img src="/img/choose-section-1-img-1.png" alt="image" class="img-fluid fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                <img src="/img/choose-section-1-img-3.png" alt="image" class="img-fluid choose-section-1__img choose-section-1__img--2 d-none d-xl-block fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(453.556px, -186.798px) rotate(8.99973deg); opacity: 1;">
+
+                                @{
+
+                                    foreach (var i in Model.CompetitionTeams)
+                                    {
+                                        if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 2)
+                                        {
+                                            <img src="/img/@i.CompetitionsTeamMembers.FirstOrDefault().TeamPicture" alt="image" class="img-fluid choose-section-1__img choose-section-1__img--1 d-none d-xl-block fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(-450.985px, -186.547px) rotate(-8.99973deg); opacity: 1;">
+                                        }
+                                        else if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 1)
+                                        {
+                                            <img src="/img/@i.CompetitionsTeamMembers.FirstOrDefault().TeamPicture" alt="image" class="img-fluid fadeIn_bottom" style="translate: none;rotate: none;scale: none;transform: translate(0px, 0px);opacity: 1;margin-bottom: 200px;">
+
+                                        }
+                                        else if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 3)
+                                        {
+                                            <img src="/img/@i.CompetitionsTeamMembers.FirstOrDefault().TeamPicture" alt="image" class="img-fluid choose-section-1__img choose-section-1__img--2 d-none d-xl-block fadeIn_bottom" style="translate: none; rotate: none; scale: none; transform: translate(453.556px, -186.798px) rotate(8.99973deg); opacity: 1;">
+
+                                        }
+                                    }
+
+                                }
+
+
                             </div>
                         </div>
                         <div class="col-lg-4 d-xl-none">
@@ -177,7 +200,7 @@
                 
                     foreach (var i in Model.CompetitionTeams)
                     {
-                        if (i.CompetitionsTeamMembers.FirstOrDefault().Place != 1)
+                        if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 1)
                         {
                             FirstPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
                         }
@@ -186,7 +209,7 @@
                             SecondPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
                         }
                         else if (i.CompetitionsTeamMembers.FirstOrDefault().Place == 3)
-                        {
+                          {
                             ThirdPlaceTeamName = i.CompetitionsTeamMembers.FirstOrDefault().CompetitionsTeamName;
                         }
                     }

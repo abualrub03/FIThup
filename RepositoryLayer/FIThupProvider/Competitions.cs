@@ -63,11 +63,12 @@ namespace FIThupProvider
                     ThirdPlaceTeam.Add(i);
                 }
             }
+
             FirstSecondThird.Add(new CompetitionsTeams(FirstPlaceTeam));
             FirstSecondThird.Add(new CompetitionsTeams(SecondPlaceTeam));
             FirstSecondThird.Add(new CompetitionsTeams(ThirdPlaceTeam));
 
-
+            
 
 
 
