@@ -11,6 +11,7 @@ namespace ViewModel
     {
         public List<Competitions> CompetitonDetails { get; set; }
         public List<CompetitionsTeams> CompetitionTeams { get; set; }
+        public List<Images> ListImages { get; set; }
 
     }
 }

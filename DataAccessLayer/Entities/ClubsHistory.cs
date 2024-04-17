@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class ClubsHistory
+    public class Images
     {
 
         public int ClubsUpdateId { get; set; }

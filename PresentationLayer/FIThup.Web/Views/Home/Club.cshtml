@@ -52,7 +52,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
-                    <img src="/img/@Model.clubsHistory.FirstOrDefault().ClubImageName" alt="image" class="img-fluid rounded-1 object-fit-cover">
+                    <img src="/img/@Model.clubsHistory.FirstOrDefault().ClubImageName" style="display: block;width: 500px;margin: 0 auto;" alt="image" class="img-fluid rounded-1 object-fit-cover">
                     
                     <p class="clr-neutral-80 fw-bold fs-18 mt-14 mb-6">@Model.clubsHistory.FirstOrDefault().ClubInfo</p>
                     
@@ -1055,12 +1055,14 @@
                                 <div class="tab-pane fade" id="generateVideoTab" role="tabpanel">
                                     <div class="accordion custom-accordion custom-accordion--faq mb-8" id="faqAccordionTwo">
                                     <div class="">
-                                        <div class="row gy-4">
+                                        <div class="row gy-4" style="
+    width: 650px;
+">
                                             @foreach(var i in Model.workShopWithClubs){
                                                 <div class="col-12">
                                                     <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
                                                         <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
-                                                            <img src="/img/large-post-1.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                                            <img src="/img/@i.ImageName" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
                                                         </a>
                                                         <ul class="list list-row gap-5 mt-10">
                                                             <li class="fs-14 clr-neutral-80 d-flex gap-2">
@@ -1286,7 +1288,7 @@
                                                     <div class="col-12">
                                                         <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
                                                             <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
-                                                                <img src="/img/large-post-1.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                                                <img src="/img/@i.ImageName" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
                                                             </a>
                                                             <ul class="list list-row gap-5 mt-10">
                                                                 <li class="fs-14 clr-neutral-80 d-flex gap-2">

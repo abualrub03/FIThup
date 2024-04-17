@@ -17,5 +17,7 @@ namespace Entities
         public int ClubHistoryID { set; get; }
 
         public string MainCompetitonImage { set; get;}  
+
+
     }
 }
