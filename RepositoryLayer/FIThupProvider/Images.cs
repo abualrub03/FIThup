@@ -11,7 +11,7 @@ namespace FIThupProvider
     public class Images : Core.Disposable
     {
 
-        public List<Entities.Images> getImageByCategoryImageUseageImageAndCategoryID(string Category , string ImageUseage,int ID)
+        public List<Entities.Images> getImageByCategoryImageUseageImageAndCategoryID(string Category , string ImageUseage, int ID)
         {
 
             using var DAL2 = new DataAccess.DataAccessLayer();

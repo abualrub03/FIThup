@@ -91,6 +91,28 @@
                                 </li>
                                 <li class="menu-list">
                                     <a href="#" class="link menu-link has-sub"> Competitions </a>
+                                    <ul class="list menu-sub" style="width: max-content;">
+                                        <!-- ********************************************************* -->
+                                        @foreach(var i in Model.competitions)
+                                        {
+
+                                            <li class="menu-sub-list">
+                                                <a href="/" class="link menu-sub-link gap-4">
+                                                    <span class="d-none d-lg-inline-block">
+                                                        <img src="/img/@i.CompetitionImageName" alt="image" class="img-fluid" width="30px">
+                                                    </span> @i.CompetitionName
+                                                </a>
+                                            </li>
+                                        }
+                                        <!-- ********************************************************* -->
+                                        
+                                        
+                                    </ul>
+                                </li>
+                                    
+                                <li class="menu-list">
+                                    <a href="#" class="link menu-link has-sub"> 
+                                        WorkShops</a>
                                     <ul class="list menu-sub">
                                         <li class="menu-sub-list">
                                             <a href="/" class="link menu-sub-link gap-4">
@@ -138,49 +160,73 @@
                                             <a href="index-7.html" class="link menu-sub-link gap-3">
                                                 <span class="d-none d-lg-inline-block">
                                                     <img src="/img/ai-saas-icon-2.png" alt="image" class="img-fluid">
-                                                </span> AI Writebot
+                                                </span> FIT hub
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                    
                                 <li class="menu-list">
-                                    <a href="pricing.html" class="link menu-link"> Pricing </a>
-                                </li>
-                                <li class="menu-list">
-                                    <a href="#" class="link menu-link has-sub"> Blog </a>
+                                    <a href="#" class="link menu-link has-sub">
+                                        Up Comming Events
+                                    </a>
                                     <ul class="list menu-sub">
                                         <li class="menu-sub-list">
-                                            <a href="blog-1.html" class="link menu-sub-link"> Blog Listing 1 </a>
+                                            <a href="/" class="link menu-sub-link gap-4">
+                                                <span class="d-none d-lg-inline-block">
+                                                    <img src="/img/ai-image-icon.png" alt="image" class="img-fluid">
+                                                </span> AI Image Generate
+                                            </a>
                                         </li>
                                         <li class="menu-sub-list">
-                                            <a href="blog-2.html" class="link menu-sub-link"> Blog Listing 2 </a>
+                                            <a href="index-2.html" class="link menu-sub-link gap-3">
+                                                <span class="d-none d-lg-inline-block">
+                                                    <img src="/img/ai-saas-icon.png" alt="image" class="img-fluid">
+                                                </span> AI SaaS
+                                            </a>
                                         </li>
                                         <li class="menu-sub-list">
-                                            <a href="blog-details.html" class="link menu-sub-link"> Blog Details </a>
+                                            <a href="index-3.html" class="link menu-sub-link gap-3">
+                                                <span class="d-none d-lg-inline-block">
+                                                    <img src="/img/ai-chatbot-icon.png" alt="image" class="img-fluid">
+                                                </span> AI Chatbot
+                                            </a>
+                                        </li>
+                                        <li class="menu-sub-list">
+                                            <a href="index-4.html" class="link menu-sub-link gap-3">
+                                                <span class="d-none d-lg-inline-block">
+                                                    <img src="/img/ai-content-icon.png" alt="image" class="img-fluid">
+                                                </span> AI Content Creator
+                                            </a>
+                                        </li>
+                                        <li class="menu-sub-list">
+                                            <a href="index-5.html" class="link menu-sub-link gap-3">
+                                                <span class="d-none d-lg-inline-block">
+                                                    <img src="/img/ai-voice-icon.png" alt="image" class="img-fluid">
+                                                </span> AI Voice Generate
+                                            </a>
+                                        </li>
+                                        <li class="menu-sub-list">
+                                            <a href="index-6.html" class="link menu-sub-link gap-3">
+                                                <span class="d-none d-lg-inline-block">
+                                                    <img src="/img/ai-video-icon.png" alt="image" class="img-fluid">
+                                                </span> AI Video Generator
+                                            </a>
+                                        </li>
+                                        <li class="menu-sub-list">
+                                            <a href="index-7.html" class="link menu-sub-link gap-3">
+                                                <span class="d-none d-lg-inline-block">
+                                                    <img src="/img/ai-saas-icon-2.png" alt="image" class="img-fluid">
+                                                </span> FIT Hub
+                                            </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="menu-list">
-                                    <a href="#" class="link menu-link has-sub"> Pages </a>
-                                    <ul class="list menu-sub">
-                                        <li class="menu-sub-list">
-                                            <a href="featured.html" class="link menu-sub-link"> Featured </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="about.html" class="link menu-sub-link"> About Us </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="use-cases.html" class="link menu-sub-link"> Use Cases </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="copywrite.html" class="link menu-sub-link"> Copywrite </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="faq.html" class="link menu-sub-link"> Faq </a>
-                                        </li>
-                                    </ul>
+                                    <a href="pricing.html" class="link menu-link"> FIT Events </a>
                                 </li>
+                                
+                                
+                                
                             </ul>
                             <ul class="list list-lg-row gap-4 gap-lg-6">
                                 <li class="menu-list mx-4 mx-lg-0">
@@ -208,25 +254,11 @@
                 <div class="col-12">
                     <div class="footer-2__content position-relative z-1 section-space-sm-y bg-black border border-neutral-variant-30 rounded-5 px-4 px-xsm-6 px-xl-12">
                         <div class="row g-4 gy-5 gy-lg-0">
-                            <div class="col-lg-4">
-                                <a href="/" class="logo link d-inline-flex align-items-center flex-shrink-0 mb-15">
-                                    <img src="/img/logo-light.png" alt="logo" class="img-fluid object-fit-contain">
-                                </a>
-                                <div class="w-100"></div>
-                                <div class="d-inline-flex gap-4 align-items-center py-3 px-6 bg-neutral-10 rounded-2">
-                                    <div class="w-7 h-7 rounded-circle overflow-hidden flex-shrink-0">
-                                        <img src="/img/blog-img-2.jpg" alt="image" class="w-100 h-100 object-fit-cover">
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <span class="d-block mb-1 fs-12 clr-white"> Power By </span>
-                                        <span class="d-block fs-14 fw-bold clr-white"> Themetags LTD. </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
+                            
+                            <div class="col-lg-8" style="margin : 0 auto">
                                 <div class="row g-4 gy-5 gy-lg-0">
                                     <div class="col-md-3">
-                                        <h6 class="mb-5 fs-18 clr-neutral-90"> Resources </h6>
+                                        <h6 class="mb-5 fs-18 clr-neutral-90"> Top Clubs </h6>
                                         <ul class="list gap-4">
                                             <li>
                                                 <a href="blog-1.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Blog </a>
@@ -242,25 +274,9 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    
                                     <div class="col-md-3">
-                                        <h6 class="mb-5 fs-18 clr-neutral-90"> Quick Menu </h6>
-                                        <ul class="list gap-4">
-                                            <li>
-                                                <a href="featured.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Features </a>
-                                            </li>
-                                            <li>
-                                                <a href="login.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Login </a>
-                                            </li>
-                                            <li>
-                                                <a href="pricing.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Pricing </a>
-                                            </li>
-                                            <li>
-                                                <a href="register.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Register </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h6 class="mb-5 fs-18 clr-neutral-90"> Tools </h6>
+                                        <h6 class="mb-5 fs-18 clr-neutral-90"> Top Competitions </h6>
                                         <ul class="list gap-4">
                                             <li>
                                                 <a href="use-cases.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Use Cases </a>
@@ -273,6 +289,23 @@
                                             </li>
                                             <li>
                                                 <a href="/" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Text Summarizer </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="mb-5 fs-18 clr-neutral-90"> Quick Menu </h6>
+                                        <ul class="list gap-4">
+                                            <li>
+                                                <a href="featured.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> FIT Events </a>
+                                            </li>
+                                            <li>1
+                                                <a href="login.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Sign Up  </a>
+                                            </li>
+                                            <li>
+                                                <a href="pricing.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Sign In </a>
+                                            </li>
+                                            <li>
+                                                <a href="register.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Main Page </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -300,15 +333,15 @@
                             <div class="row g-4 align-items-center">
                                 <div class="col-lg-3">
                                     <p class="mb-0 clr-white fw-medium fs-14 text-lg-start text-center">
-                                        Copyright &copy; 2023 <a href="#" class="link d-inline-block clr-white">Writebot</a>
+                                        Copyright &copy; 2023 <a href="#" class="link d-inline-block clr-white">FIT hub</a>
                                     </p>
                                 </div>
                                 <div class="col-lg-6">
-                                    <h6 class="text-md-center clr-white"> Subscribe Our Newsletter 👍 </h6>
+                                    <h6 class="text-md-center clr-white"> Search About Whatever You want </h6>
                                     <div class="newsletter-1 d-inline-block w-100 max-text-60 mx-auto position-relative z-1 overflow-hidden rounded-pill">
                                         <div class="d-flex p-3 bg-neutral-10 rounded ">
-                                            <input type="text" class="form-control newsletter-1__input bg-transparent clr-neutral-60" placeholder="Enter  Email Address">
-                                            <button type="submit" class="bg-primary-key :bg-primary-30 position-relative z-1 link d-inline-flex justify-content-center align-items-center gap-2 px-5 py-2 rounded-pill fs-14 fw-bold text-center border-0 clr-white"> Subscribe </button>
+                                            <input type="text" class="form-control newsletter-1__input bg-transparent clr-neutral-60" placeholder="Clubs, Competition, Workshops, etc...">
+                                            <button type="submit" class="bg-primary-key :bg-primary-30 position-relative z-1 link d-inline-flex justify-content-center align-items-center gap-2 px-5 py-2 rounded-pill fs-14 fw-bold text-center border-0 clr-white"> Search </button>
                                         </div>
                                     </div>
                                 </div>

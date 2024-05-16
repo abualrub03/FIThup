@@ -11,7 +11,7 @@ namespace Entities
            public int ImageID       {set; get;}
            public int ID            {set; get;}
            public string ImageName  {set; get;}
-           public string ImageUsage {set; get;}
+           public string ImageUseage {set; get;}
            public string Category { set; get; }
 
     }

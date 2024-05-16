@@ -10,5 +10,6 @@ namespace ViewModel
     public class LayoutViewModel
     {
         public List<Clubs> clubs { set; get; }
+        public List<CompetitionsCategory> competitions { set; get; }
     }
 }

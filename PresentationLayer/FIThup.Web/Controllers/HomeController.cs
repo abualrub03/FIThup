@@ -31,7 +31,7 @@ namespace FIThup.Controllers
         {
             var VM = new IndexViewModel();
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
-
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
             return View(VM);
         }
         public IActionResult Club()
@@ -42,7 +42,7 @@ namespace FIThup.Controllers
         {
             var VM = new CompetitionDetailsViewModel();
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
-
+            VM.ListImages = new FIThupProvider.Images().getImageByCategoryImageUseageImageAndCategoryID("Competitions", "MultiImages", CompetitonID);
             VM.CompetitonDetails = new FIThupProvider.Competitions().getCompetitionByID(CompetitonID);
             VM.CompetitionTeams = new FIThupProvider.Competitions().getFirstThreePlacesInCompetionByID(CompetitonID);
             return View("CompetitionDetails" ,VM);

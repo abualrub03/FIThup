@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Images
+    public class ClubsHistory
     {
-
         public int ClubsUpdateId { get; set; }
         public int ClubId { get; set; }
         public string PerviewName { get; set; }
