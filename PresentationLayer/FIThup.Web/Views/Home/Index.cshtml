@@ -1,8 +1,14 @@
 ﻿@model ViewModel.IndexViewModel
 @{
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/HomeLayout.cshtml";
 }
 
+<script type="text/javascript">
+    
+   
+
+</script>
 
 <body class="bg-black">
     
@@ -27,8 +33,10 @@
                         <p class="fs-18 fw-bold clr-neutral-80 max-text-50 mx-auto mb-10 animate-text-from-bottom"> For all clubs, competitions, workshops, etc. </p>
                         <div class="newsletter-1 d-inline-block w-100 max-text-60 mx-auto mb-4 position-relative z-1 overflow-hidden rounded fadeIn_bottom">
                             <div class="d-flex p-3 bg-neutral-10 rounded ">
-                                <input type="text" class="form-control newsletter-1__input bg-transparent clr-neutral-60" placeholder="Clubs, competitions, workshops, etc">
-                                <button type="button" class="newsletter-1__btn d-inline-block py-3 px-5 rounded fw-bold clr-white bg-grad-1"> Search </button>
+                                <form method="get" action="/Home/SearchPage" style="display: contents;">
+                                    <input type="text" id="searchTerm" class="form-control newsletter-1__input bg-transparent clr-neutral-60" name="searchTerm" placeholder="Clubs, competitions, workshops, etc">
+                                    <button type="submit" class="newsletter-1__btn d-inline-block py-3 px-5 rounded fw-bold clr-white bg-grad-1" > Search </button>
+                                </form>
                             </div>
                         </div>
                         <ul class="hero-1__tag-list list list-row align-items-center justify-content-center gap-3 flex-wrap">

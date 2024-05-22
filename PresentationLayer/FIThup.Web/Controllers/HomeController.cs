@@ -10,9 +10,11 @@ namespace FIThup.Controllers
     public class HomeController : BaseController
     {
 
-        public IActionResult ClubView(int ClubID)
-            {
+        public IActionResult ClubView(int ClubID){
+
             var VM = new ClubViewModel();
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
             VM.clubsHistory = new FIThupProvider.ClubsHistory().getClubHistory(ClubID);
             VM.TeamMembers = new FIThupProvider.ClubsTeamMembers().getTeamMembersByClubHistoryID(VM.clubsHistory.FirstOrDefault().ClubsUpdateId);
@@ -38,9 +40,12 @@ namespace FIThup.Controllers
         {
             return View();
         }
+
         public IActionResult CompetitionDetails(int CompetitonID)
         {
             var VM = new CompetitionDetailsViewModel();
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
             VM.ListImages = new FIThupProvider.Images().getImageByCategoryImageUseageImageAndCategoryID("Competitions", "MultiImages", CompetitonID);
             VM.CompetitonDetails = new FIThupProvider.Competitions().getCompetitionByID(CompetitonID);
@@ -68,6 +73,14 @@ namespace FIThup.Controllers
 
 
             return View("EventsAndUpComingsDetails", VM);
+        }
+        [HttpGet]
+        public IActionResult SearchPage(string searchTerm)
+        {
+            var VM = new ViewModel.SearchPageViewModel();
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+            VM.clubs = new FIThupProvider.Clubs().getClubsList();
+            return View("SearchPage",VM);
         }
 
     }

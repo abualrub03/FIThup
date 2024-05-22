@@ -1,0 +1,645 @@
+﻿@model ViewModel.SearchPageViewModel
+@{
+    ViewBag.Title = "SearchPage";
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+
+
+<!--
+    Popular S
+-->
+
+<section class="breadcrumb-section">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-7 col-xl-8">
+                <div class="d-inline-flex align-items-center py-2 px-4 bg-info-10 bg-opacity-3 rounded-1">
+                    <a href="index-7.html" class="link fs-12 clr-white">Home</a>
+                    <span class="fs-12 clr-white">-</span>
+                    <span class="fs-12 clr-white"> Search </span>
+                </div>
+                <h2 class="h3 fw-bold clr-neutral-90 mt-4">Search Results</h2>
+            </div>
+        </div>
+    </div>
+    <img src="/img/breadcrumb-shape-top.png" alt="image" class="img-fluid breadcrumb-shape breadcrumb-shape-top">
+    <img src="/img/breadcrumb-shape-left.png" alt="image" class="img-fluid breadcrumb-shape breadcrumb-shape-left">
+    <img src="/img/breadcrumb-shape-right.png" alt="image" class="img-fluid breadcrumb-shape breadcrumb-shape-right">
+    <img src="/img/breadcrumb-shape-line-left.png" alt="image" class="img-fluid breadcrumb-shape breadcrumb-shape-line-left">
+    <img src="/img/breadcrumb-shape-line-right.png" alt="image" class="img-fluid breadcrumb-shape breadcrumb-shape-line-right">
+</section>
+
+<!--
+    Popular E
+-->
+<div class="section-space-sm-top section-space-bottom position-relative z-index-1">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="row gy-4">
+                <div class="col-lg-8">
+                    <ul class="nav nav-underline nav-bordered" id="popularTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link clr-neutral-80 active" id="p1-tab" data-bs-toggle="tab" data-bs-target="#p1-tab-pane" type="button" role="tab" aria-controls="p1-tab-pane" aria-selected="true">All Results</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link clr-neutral-80 active" id="p1-tab" data-bs-toggle="tab" data-bs-target="#p1-tab-pane" type="button" role="tab" aria-controls="p1-tab-pane" aria-selected="true">People</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link clr-neutral-80" id="p2-tab" data-bs-toggle="tab" data-bs-target="#p2-tab-pane" type="button" role="tab" aria-controls="p2-tab-pane" aria-selected="false" tabindex="-1">Clubs</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link clr-neutral-80" id="p3-tab" data-bs-toggle="tab" data-bs-target="#p3-tab-pane" type="button" role="tab" aria-controls="p3-tab-pane" aria-selected="false" tabindex="-1">Competitions</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link clr-neutral-80" id="p4-tab" data-bs-toggle="tab" data-bs-target="#p4-tab-pane" type="button" role="tab" aria-controls="p4-tab-pane" aria-selected="false" tabindex="-1">Workshops</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link clr-neutral-80" id="p5-tab" data-bs-toggle="tab" data-bs-target="#p5-tab-pane" type="button" role="tab" aria-controls="p5-tab-pane" aria-selected="false" tabindex="-1">FIT Events &amp; More</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                
+                <div class="row gy-4">
+                    <div class="col-12">
+                        <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                            <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                <img src="/img/large-post-1.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                            </a>
+                            <ul class="list list-row gap-5 mt-10">
+                                <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                    <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                </li>
+                                <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                            </ul>
+                            <h3 class="h4 mt-2">
+                                <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
+                            </h3>
+                            <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
+                            <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                            <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                <img src="/img/large-post-2.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                            </a>
+                            <ul class="list list-row gap-5 mt-10">
+                                <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                    <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                </li>
+                                <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                            </ul>
+                            <h3 class="h4 mt-2">
+                                <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
+                            </h3>
+                            <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
+                            <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                            <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                <img src="/img/large-post-3.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                            </a>
+                            <ul class="list list-row gap-5 mt-10">
+                                <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                    <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                </li>
+                                <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                            </ul>
+                            <h3 class="h4 mt-2">
+                                <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
+                            </h3>
+                            <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
+                            <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                            <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                <img src="/img/large-post-1.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                            </a>
+                            <ul class="list list-row gap-5 mt-10">
+                                <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                    <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                </li>
+                                <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                            </ul>
+                            <h3 class="h4 mt-2">
+                                <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
+                            </h3>
+                            <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
+                            <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="pagination flex-wrap number-pagination gap-2 mt-12">
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <i class="bi bi-chevron-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-neutral-4 py-5 px-4 py-sm-10 px-sm-8 rounded-1">
+                    <h4 class="clr-neutral-90 fw-extrabold fs-24 mb-6">Search</h4>
+                    <form class="d-flex bg-neutral-12 rounded-top-start-2 rounded-bottom-start-2">
+                        <input type="search" name="#" placeholder="Serach..." class="form-control newsletter-1__input h-13 bg-transparent border border-neutral-24 clr-neutral-60 rounded-0 rounded-top-start-2 rounded-bottom-start-2">
+                        <button type="submit" class="px-5 bg-primary-key clr-white border-0 rounded-top-end-2 rounded-bottom-end-2"><i class="bi bi-search"></i></button>
+                    </form>
+                    <hr class="opacity-100 my-10">
+                    <h4 class="clr-neutral-90 fs-24 fw-semibold mb-7">Most Popular Searchs</h4>
+                    <ul class="list list-column gap-4">
+                        <li>
+                            <a href="blog-1.html" class="link clr-neutral-80 :clr-primary-key">GDS students</a>
+                        </li>
+                        <li>
+                            <a href="blog-1.html" class="link clr-neutral-80 :clr-primary-key">UX UI Workshop</a>
+                        </li>
+                       
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /Hero 1 -->
+
+<body class="bg-black">
+
+
+    <div class="trigger-showcase position-relative z-1">
+        <!-- Hero Section Shapes -->
+        <div class="hero-1-shapes">
+            <img src="/img/hero-shape-left.webp" alt="image" class="img-fluid hero-1-shapes__img hero-1-shapes__img--1">
+            <img src="/img/hero-shape-right.webp" alt="image" class="img-fluid hero-1-shapes__img hero-1-shapes__img--2">
+            <img src="/img/hero-shape-ring-1.png" alt="image" class="img-fluid hero-1-shapes__img hero-1-shapes__img--3">
+            <img src="/img/hero-shape-ring-2.png" alt="image" class="img-fluid hero-1-shapes__img hero-1-shapes__img--4">
+        </div>
+        <!-- /Hero Section Shapes -->
+        <!-- Hero 1 -->
+        
+        <div class="section-space-top section-space-sm-bottom">
+            <div class="container">
+                <div class="mb-10">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <h2 class="h3 clr-neutral-90 fw-extrabold mb-4">Most Popular Post</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gy-4">
+                    <div class="col-lg-8">
+                        <ul class="nav nav-underline nav-bordered" id="popularTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link clr-neutral-80 active" id="p1-tab" data-bs-toggle="tab" data-bs-target="#p1-tab-pane" type="button" role="tab" aria-controls="p1-tab-pane" aria-selected="true">AIl Things AI</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link clr-neutral-80" id="p2-tab" data-bs-toggle="tab" data-bs-target="#p2-tab-pane" type="button" role="tab" aria-controls="p2-tab-pane" aria-selected="false" tabindex="-1">AI Content Writing</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link clr-neutral-80" id="p3-tab" data-bs-toggle="tab" data-bs-target="#p3-tab-pane" type="button" role="tab" aria-controls="p3-tab-pane" aria-selected="false" tabindex="-1">Design &amp; Creative</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link clr-neutral-80" id="p4-tab" data-bs-toggle="tab" data-bs-target="#p4-tab-pane" type="button" role="tab" aria-controls="p4-tab-pane" aria-selected="false" tabindex="-1">Marketing Strategy</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link clr-neutral-80" id="p5-tab" data-bs-toggle="tab" data-bs-target="#p5-tab-pane" type="button" role="tab" aria-controls="p5-tab-pane" aria-selected="false" tabindex="-1">Product Update</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-10" id="popularTabContent">
+                            <div class="tab-pane fade show active" id="p1-tab-pane" role="tabpanel" aria-labelledby="p1-tab" tabindex="0">
+                                <div class="row gy-5">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-1.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-2.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-3.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="p2-tab-pane" role="tabpanel" aria-labelledby="p2-tab" tabindex="0">
+                                <div class="row gy-5">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-4.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-5.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-6.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="p3-tab-pane" role="tabpanel" aria-labelledby="p3-tab" tabindex="0">
+                                <div class="row gy-5">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-7.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-8.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-9.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="p4-tab-pane" role="tabpanel" aria-labelledby="p4-tab" tabindex="0">
+                                <div class="row gy-5">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-10.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-11.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-12.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="p5-tab-pane" role="tabpanel" aria-labelledby="p5-tab" tabindex="0">
+                                <div class="row gy-5">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-1.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-2.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="blog-details.html" class="d-block">
+                                                    <img src="/img/popular-post-3.png" alt="image" class="img-fluid rounded-4">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span class="clr-secondary-key fw-bold mb-2 d-inline-block">AI News</span>
+                                                <h4 class="fs-24 fw-extrabold max-text-24"><a href="blog-details.html" class="clr-neutral-90 link :clr-primary-key">Performing an SEO Audit The Definitive Checklist</a></h4>
+                                                <p class="clr-neutral-80 mb-6">With our AI Generators, the possibilities are endless we don't keep secrets from our friends.</p>
+                                                <ul class="list list-row gap-5">
+                                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                                        <i class="bi bi-calendar2-date"></i> March 19, 2022
+                                                    </li>
+                                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bg-neutral-4 rounded-4 py-8 px-6">
+                            <h4 class="clr-neutral-90 fs-24 fw-semibold mb-8">Related Posts</h4>
+                            <div class="d-flex gap-4 mt-6">
+                                <div class="w-20 h-20 rounded-1 overflow-hidden flex-shrink-0">
+                                    <a href="blog-details.html" class="d-block h-100">
+                                        <img src="/img/small-post-1.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                    </a>
+                                </div>
+                                <div>
+                                    <span class="d-inline-flex align-items-center gap-2 fs-14 clr-neutral-80 mb-2"><i class="bi bi-calendar2-date"></i> Oct 29, 2023</span>
+                                    <h5 class="fs-16 fw-bold mb-0">
+                                        <a href="blog-details.html" class="link clr-neutral-90 :clr-primary-key">Advance warning of the next big solar storm</a>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-4 mt-6">
+                                <div class="w-20 h-20 rounded-1 overflow-hidden flex-shrink-0">
+                                    <a href="blog-details.html" class="d-block h-100">
+                                        <img src="/img/small-post-2.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                    </a>
+                                </div>
+                                <div>
+                                    <span class="d-inline-flex align-items-center gap-2 fs-14 clr-neutral-80 mb-2"><i class="bi bi-calendar2-date"></i> Oct 29, 2023</span>
+                                    <h5 class="fs-16 fw-bold mb-0">
+                                        <a href="blog-details.html" class="link clr-neutral-90 :clr-primary-key">Advance warning of the next big solar storm</a>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-4 mt-6">
+                                <div class="w-20 h-20 rounded-1 overflow-hidden flex-shrink-0">
+                                    <a href="blog-details.html" class="d-block h-100">
+                                        <img src="/img/small-post-3.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                    </a>
+                                </div>
+                                <div>
+                                    <span class="d-inline-flex align-items-center gap-2 fs-14 clr-neutral-80 mb-2"><i class="bi bi-calendar2-date"></i> Oct 29, 2023</span>
+                                    <h5 class="fs-16 fw-bold mb-0">
+                                        <a href="blog-details.html" class="link clr-neutral-90 :clr-primary-key">Advance warning of the next big solar storm</a>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-4 mt-6">
+                                <div class="w-20 h-20 rounded-1 overflow-hidden flex-shrink-0">
+                                    <a href="blog-details.html" class="d-block h-100">
+                                        <img src="/img/small-post-4.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                    </a>
+                                </div>
+                                <div>
+                                    <span class="d-inline-flex align-items-center gap-2 fs-14 clr-neutral-80 mb-2"><i class="bi bi-calendar2-date"></i> Oct 29, 2023</span>
+                                    <h5 class="fs-16 fw-bold mb-0">
+                                        <a href="blog-details.html" class="link clr-neutral-90 :clr-primary-key">Advance warning of the next big solar storm</a>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <h4 class="clr-neutral-90 fs-24 fw-semibold mb-8">Popular Tags</h4>
+                            <ul class="list list-row flex-wrap gap-4">
+                                <li>
+                                    <a href="blog-1.html" class="py-4 px-8 border border-neutral-10 rounded-2 clr-neutral-80 link fs-14 d-block :bg-primary-key :clr-white">Content</a>
+                                </li>
+                                <li>
+                                    <a href="blog-1.html" class="py-4 px-8 border border-neutral-10 rounded-2 clr-neutral-80 link fs-14 d-block :bg-primary-key :clr-white">Design</a>
+                                </li>
+                                <li>
+                                    <a href="blog-1.html" class="py-4 px-8 border border-neutral-10 rounded-2 clr-neutral-80 link fs-14 d-block :bg-primary-key :clr-white">Marketing</a>
+                                </li>
+                                <li>
+                                    <a href="blog-1.html" class="py-4 px-8 border border-neutral-10 rounded-2 clr-neutral-80 link fs-14 d-block :bg-primary-key :clr-white">Web development</a>
+                                </li>
+                                <li>
+                                    <a href="blog-1.html" class="py-4 px-8 border border-neutral-10 rounded-2 clr-neutral-80 link fs-14 d-block :bg-primary-key :clr-white">Innovation</a>
+                                </li>
+                                <li>
+                                    <a href="blog-1.html" class="py-4 px-8 border border-neutral-10 rounded-2 clr-neutral-80 link fs-14 d-block :bg-primary-key :clr-white">Tech</a>
+                                </li>
+                                <li>
+                                    <a href="blog-1.html" class="py-4 px-8 border border-neutral-10 rounded-2 clr-neutral-80 link fs-14 d-block :bg-primary-key :clr-white">Luxury</a>
+                                </li>
+                                <li>
+                                    <a href="blog-1.html" class="py-4 px-8 border border-neutral-10 rounded-2 clr-white link fs-14 d-block :bg-primary-key :clr-white">Sport</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="/js/plugins.js"></script>
+    <script src="/js/app.js"></script>
+</body>
