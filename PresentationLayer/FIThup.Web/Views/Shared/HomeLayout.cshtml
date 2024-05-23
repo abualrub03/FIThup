@@ -6,10 +6,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FitHup">
+    <meta name="description" content="FitHub">
     <meta name="keywords" content="bootstrap 5, saas, landing page">
     <meta name="author" content="Themetags">
-    <title>ASPU - FIThup</title>
+    <title>ASPU - FIThub</title>
     <link rel="stylesheet" href="/css/fonts/ff-1.css">
     <link rel="stylesheet" href="/css/fonts/ff-3.css">
     <link rel="stylesheet" href="/css/fonts/bootstrap-icons.css">
@@ -64,7 +64,7 @@
     margin: 10px;
     font-family: emoji;
     font-size: 23px;
-">FIT hup</p>
+">FIT hub</p>
                             </a>
                             <button class="menu-toggle w-10 h-10 p-0 border-0 lh-1 bg-primary-50 clr-neutral-100 :clr-neutral-100 transition :bg-primary-300 rounded flex-shrink-0 d-lg-none order-sm-3 fs-24">
                                 <i class="bi bi-list"></i>
@@ -96,9 +96,8 @@
                                         <!-- ********************************************************* -->
                                         @foreach(var i in Model.competitions)
                                         {
-
                                             <li class="menu-sub-list">
-                                                <a href="/" class="link menu-sub-link gap-4">
+                                                <a href="/Home/MainCompetitionPage" class="link menu-sub-link gap-4">
                                                     <span class="d-none d-lg-inline-block">
                                                         <img src="/img/@i.CompetitionImageName" alt="image" class="img-fluid" width="30px">
                                                     </span> @i.CompetitionName
@@ -106,69 +105,44 @@
                                             </li>
                                         }
                                         <!-- ********************************************************* -->
-                                        
-                                        
+                                  
                                     </ul>
                                 </li>
-                                    
                                 <li class="menu-list">
-                                    <a href="#" class="link menu-link has-sub"> 
-                                        WorkShops</a>
-                                    <ul class="list menu-sub">
+                                    <a href="#" class="link menu-link has-sub"> Workshops </a>
+                                    <ul class="list menu-sub" style="
+    width: max-content;
+">
+                                        <!-- ********************************************************* -->
                                         <li class="menu-sub-list">
-                                            <a href="/" class="link menu-sub-link gap-4">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-image-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Image Generate
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-2.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-saas-icon.png" alt="image" class="img-fluid">
-                                                </span> AI SaaS
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-3.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-chatbot-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Chatbot
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-4.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-content-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Content Creator
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-5.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-voice-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Voice Generate
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-6.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-video-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Video Generator
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-7.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-saas-icon-2.png" alt="image" class="img-fluid">
-                                                </span> FIT hub
-                                            </a>
-                                        </li>
+                                                <a href="/Home/ClubView?ClubID" class="link menu-sub-link gap-4">
+                                                    <span class="d-none d-lg-inline-block">
+                                                        <img src="" alt="image" class="img-fluid" width="30px">
+                                                    </span> FIT - Workshops
+                                                </a>
+                                            </li>
+                                        @foreach (var i in Model.clubs)
+                                        {
+
+                                            <li class="menu-sub-list">
+                                                <a href="/Home/ClubView?ClubID=@i.ClubsUpdateId" class="link menu-sub-link gap-4">
+                                                    <span class="d-none d-lg-inline-block">
+                                                        <img src="/img/@i.ClubLogoImageName" alt="image" class="img-fluid" width="30px">
+                                                    </span> @i.ClubName - Workshops
+                                                </a>
+                                            </li>
+                                        }
+                                        <!-- ********************************************************* -->
                                     </ul>
+                                </li>
+                                
+                                
+                                <li class="menu-list">
+                                    <a href="pricing.html" class="link menu-link"> Up Comming Events </a>
                                 </li>
                                 <li class="menu-list">
                                     <a href="#" class="link menu-link has-sub">
-                                        Up Comming Events
+                                        More
                                     </a>
                                     <ul class="list menu-sub">
                                         <li class="menu-sub-list">
@@ -178,53 +152,13 @@
                                                 </span> AI Image Generate
                                             </a>
                                         </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-2.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-saas-icon.png" alt="image" class="img-fluid">
-                                                </span> AI SaaS
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-3.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-chatbot-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Chatbot
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-4.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-content-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Content Creator
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-5.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-voice-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Voice Generate
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-6.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-video-icon.png" alt="image" class="img-fluid">
-                                                </span> AI Video Generator
-                                            </a>
-                                        </li>
-                                        <li class="menu-sub-list">
-                                            <a href="index-7.html" class="link menu-sub-link gap-3">
-                                                <span class="d-none d-lg-inline-block">
-                                                    <img src="/img/ai-saas-icon-2.png" alt="image" class="img-fluid">
-                                                </span> FIT Hub
-                                            </a>
-                                        </li>
+
                                     </ul>
                                 </li>
                                 <li class="menu-list">
                                     <a href="pricing.html" class="link menu-link"> FIT Events </a>
                                 </li>
+                                
                                 
                                 
                                 
@@ -261,36 +195,33 @@
                                     <div class="col-md-3">
                                         <h6 class="mb-5 fs-18 clr-neutral-90"> Top Clubs </h6>
                                         <ul class="list gap-4">
-                                            <li>
-                                                <a href="blog-1.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Blog </a>
-                                            </li>
-                                            <li>
-                                                <a href="about.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> About </a>
-                                            </li>
-                                            <li>
-                                                <a href="copywrite.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> API Access </a>
-                                            </li>
-                                            <li>
-                                                <a href="faq.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> FAQ </a>
-                                            </li>
+                                            <!-- ********************************************************* -->
+                                            @foreach (var i in Model.clubs )
+                                            {
+
+                                                <li>
+                                                    <a href="featured.html" class="link d-inline-block clr-neutral-80 :clr-primary-key">   @i.ClubName</a>
+
+                                                    
+                                                </li>
+                                            }
+                                            <!-- ********************************************************* -->
                                         </ul>
                                     </div>
                                     
                                     <div class="col-md-3">
                                         <h6 class="mb-5 fs-18 clr-neutral-90"> Top Competitions </h6>
                                         <ul class="list gap-4">
-                                            <li>
-                                                <a href="use-cases.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Use Cases </a>
-                                            </li>
-                                            <li>
-                                                <a href="about.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Paraphrasing Tool </a>
-                                            </li>
-                                            <li>
-                                                <a href="/" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Sentence Expander </a>
-                                            </li>
-                                            <li>
-                                                <a href="/" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Text Summarizer </a>
-                                            </li>
+                                            <!-- ********************************************************* -->
+                                            @foreach (var i in Model.competitions)
+                                            {
+                                                <li>
+                                                    <a href="featured.html" class="link d-inline-block clr-neutral-80 :clr-primary-key">   @i.CompetitionName </a>
+
+                                                    
+                                                </li>
+                                            }
+                                            <!-- ********************************************************* -->
                                         </ul>
                                     </div>
                                     <div class="col-md-3">
@@ -299,7 +230,7 @@
                                             <li>
                                                 <a href="featured.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> FIT Events </a>
                                             </li>
-                                            <li>1
+                                            <li>
                                                 <a href="login.html" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Sign Up  </a>
                                             </li>
                                             <li>

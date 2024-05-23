@@ -83,5 +83,16 @@ namespace FIThup.Controllers
             return View("SearchPage",VM);
         }
 
+
+
+
+        public IActionResult MainCompetitionPage()
+        {
+            var VM = new ViewModel.MainCompetitionPageViewModel();
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+            VM.clubs = new FIThupProvider.Clubs().getClubsList();
+            return View("MainCompetitionPage", VM);
+        }
+
     }
 }
