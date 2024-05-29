@@ -10,5 +10,7 @@ namespace ViewModel
     public class WorkShopWithClubsViewModel : LayoutViewModel
     {
         public List<WorkShopWithClubs> CompetitonDetails { get; set; }
+        public List<Images> ListImages { get; set; }
+        
     }
 }

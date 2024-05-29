@@ -74,8 +74,20 @@ namespace FIThupProvider
 
             return FirstSecondThird;
         }
+        public List<Entities.Competitions> getAllEditionsForThisCompetitionsCategory(int CompetitionCategoryId)
+        {
+
+            using var DAL2 = new DataAccess.DataAccessLayer();
+            DAL2.Parameters = new List<SqlParameter> {
+                new SqlParameter{ ParameterName = "@CompetitionCategoryId", Value =  CompetitionCategoryId },
+
+            };
+            return DAL2.ExecuteReader<Entities.Competitions>("spGetAllEditionsForThisCompetitionsCategory");
+        }
 
 
     }
+
+
 }
 

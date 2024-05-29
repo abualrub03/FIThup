@@ -8,7 +8,7 @@
     var Endpart = "";
     /////////////////////////////////////
     string FirstPlaceTeamName = ""; string SecondPlaceTeamName = ""; string ThirdPlaceTeamName = "";
-
+   
 
 
 }
@@ -24,7 +24,7 @@
                             <h2 class="mb-6 text-center clr-white fw-extrabold animate-line-3d" style="perspective: 400px;">
                                 @{
 
-                                    foreach(var i in Model.CompetitonDetails.FirstOrDefault().CompetitionTitle)
+                                    foreach (var i in Model.CompetitonDetails.FirstOrDefault().CompetitionTitle)
                                     {
                                         if(i == ' ')
                                         {
@@ -299,53 +299,110 @@
     </div>
 </div>
 
+@if(Model.ListImages != null)
+{
+    <div class="container">
+        <div class="row g-4">
+           
+            <div class="col-md-12">
+                <div class="row g-4">
+                    @foreach(var i in Model.ListImages)
+                    {
+                        <div class="col-md-4">
+                            <img src="/img/@i.ImageName" alt="image" class="img-fluid rounded-1 w-100 img-fadeIn-2" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1 ; object-fit: cover;width: 450px !important;height: 450px;">
+                        </div>
+                    }
+                    
 
-
-<div class="container">
-    <div class="row g-4">
-        <div class="col-md-6">
-            <div class="row g-4">
-                @foreach(var i in Model.ListImages){
-                    <div class="col-12">
-                        <img src="/img/@i.ImageName" alt="image" class="img-fluid rounded-1 img-fadeIn-1" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                    </div>
-                }
-                <!-- 
-                <div class="col-12">
-                    <img src="/img/1.jpg" alt="image" class="img-fluid rounded-1 img-fadeIn-1" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                </div>      
-
-                <div class="col-md-6">
-                    <img src="/img/6.jpg" alt="image" class="img-fluid rounded-1 w-100 img-fadeIn-2" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                </div>
-
-                <div class="col-md-6">
-                    <img src="/img/7.jpg" alt="image" class="img-fluid rounded-1 w-100 img-fadeIn-3" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                </div>
-
-                <div class="col-12">
-                    <img src="/img/3.jpg" alt="image" class="img-fluid rounded-1 img-fadeIn-4" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                </div>
-                -->
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="row g-4">
-
-
-
-                <div class="col-md-6">
-                    <img src="/img/6.jpg" alt="image" class="img-fluid rounded-1 w-100 img-fadeIn-2" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                </div>
-
-
-
-                <div class="col-md-6">
-                    <img src="/img/7.jpg" alt="image" class="img-fluid rounded-1 w-100 img-fadeIn-3" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                </div><div class="col-12">
-                    <img src="/img/3.jpg" alt="image" class="img-fluid rounded-1 img-fadeIn-4" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
                 </div>
             </div>
+            
         </div>
     </div>
-</div>
+}
+
+@if (Model.CompetitonEditions.Count() > 1)
+{
+    <section class="breadcrumb-section" style="margin-top: -100px;">
+        <div class="breadcrumb-section-inner">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-5 col-xl-8">
+                        <div class="text-center">
+                            <div class="d-inline-flex align-items-center py-2 px-4 bg-info-10 bg-opacity-3 rounded-1">
+                                <span class="fs-12 clr-white">Details</span>
+                            </div>
+                            <h2 class="h3 fw-bold clr-neutral-90 mt-4"> Know More About This Competition: </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <nav class="todo-nav style-two">
+                                <ul class="list gap-5 nav todo-nav__menu" role="tablist">
+                                    <li>
+                                        <a href="#aiImgGenerateTab" class="nav-link link todo-nav__link active" data-bs-toggle="tab" data-bs-target="#" aria-selected="true" role="tab"> Editions </a>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="aiImgGenerateTab" role="tabpanel">
+                                    <div class="accordion custom-accordion custom-accordion--faq mb-8" id="faqAccordionOne">
+                                        <div class="p-4 p-md-6 rounded-4 bg-black border border-neutral-10">
+                                            <div class="row g-3">
+                                                @foreach (var i in Model.CompetitonEditions)
+                                                {
+                                                    if (i.CompetitionID == Model.CompetitonDetails.SingleOrDefault().CompetitionID)
+                                                    {
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="col-md-6 col-xl-12">
+                                                            <div class="d-flex flex-column flex-sm-row flex-md-column flex-xxl-row gap-6 gradient-card top-shadow rounded-3 p-4 p-xl-5 p-xxl-6 ">
+                                                                <div class="rounded-3 overflow-hidden flex-shrink-0">
+                                                                    <img style="    width: 200px;    " src="/img/@i.MainCompetitonImage" alt="image" class="img-fluid">
+                                                                </div>
+                                                                <div class="flex-grow-1">
+                                                                    <h5 class="mb-2">
+                                                                        <a href="blog-details.html" class="link d-block clr-neutral-90 :clr-primary-key"> @i.CompetitionTitle </a>
+                                                                    </h5>
+                                                                    <p class="mb-5 clr-neutral-80 fs-14">
+                                                                        @for (int ii = 0; ii < 250; ii++)
+                                                                        {
+                                                                            @i.SmallDescription[ii]
+                                                                            ;
+                                                                        }
+                                                                        ...
+                                                                    </p>
+                                                                    <a href="/Home/ClubView?ClubID=@i.CompetitionID" class="link d-inline-block py-2 px-6 rounded-pill bg-neutral-variant-30 :bg-primary-key clr-white fw-bold"> View More </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    }
+
+
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+}
+
+
+

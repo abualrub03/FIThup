@@ -1,0 +1,77 @@
+﻿@model ViewModel.ClubsWorkshopViewModel
+@{
+    ViewBag.Title = "ClubsWorkshop";
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+    
+}
+
+
+    <section class="breadcrumb-section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-7 col-xl-8">
+                <div class="d-inline-flex align-items-center py-2 px-4 bg-info-10 bg-opacity-3 rounded-1">
+                    <a href="index-7.html" class="link fs-12 clr-white">Clubs</a>
+                    <span class="fs-12 clr-white">-</span>
+                    <span class="fs-12 clr-white"> Workshops </span>
+                </div>
+                <h2 class="h3 fw-bold clr-neutral-90 mt-4">
+                    @Model.club.FirstOrDefault().ClubName - Workshops
+                </h2>
+            </div>
+        </div>
+    </div>
+    <img src="/img/breadcrumb-shape-top.png" alt="image" class="img-fluid breadcrumb-shape breadcrumb-shape-top">
+    <img src="/img/breadcrumb-shape-left.png" alt="image" class="img-fluid breadcrumb-shape breadcrumb-shape-left">
+    <img src="/img/breadcrumb-shape-right.png" alt="image" class="img-fluid breadcrumb-shape breadcrumb-shape-right">
+    <img src="/img/breadcrumb-shape-line-left.png" alt="image" class="img-fluid breadcrumb-shape breadcrumb-shape-line-left">
+    <img src="/img/breadcrumb-shape-line-right.png" alt="image" class="img-fluid breadcrumb-shape breadcrumb-shape-line-right">
+</section>
+
+
+<div class="section-space-sm-top section-space-bottom position-relative z-index-1">
+    <div class="container">
+        <div class="row gy-5">
+
+            <div class="col-lg-8" style="
+    margin: 0 auto;
+">
+
+                <div class="row gy-4">
+                    @foreach(var i in Model.workshops)
+                    {
+                        <div class="col-12">
+                            <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                                <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                    <img src="/img/@i.ImageName" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                </a>
+                                <ul class="list list-row gap-5 mt-10">
+                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                        <i class="bi bi-calendar2-date"></i> @i.WorkShopDateTime
+                                    </li>
+                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                </ul>
+                                <h3 class="h4 mt-2">
+                                    <a href="/Home/WorkShopDetails?WorkShopID=@i.WorkShopID" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">@i.Title</a>
+                                </h3>
+                                <p class="clr-neutral-80 mt-6">@i.SmallDescription</p>
+                                <div style="    /* justify-content: center; */    text-align: center;    ">
+                                    <a href="/Home/WorkShopDetails?WorkShopID=@i.WorkShopID" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6" style="/* margin: 0 auto; */    /* position: revert-layer; */    display: au;    ">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    }
+                    
+                    
+                    
+                    
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

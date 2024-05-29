@@ -10,5 +10,6 @@ namespace Entities
         public int CompetitionCategoryID { get; set; }
         public string CompetitionName { get; set; }
         public string CompetitionImageName { get; set; }
+        public string LastVersion { get; set; }
     }
 }

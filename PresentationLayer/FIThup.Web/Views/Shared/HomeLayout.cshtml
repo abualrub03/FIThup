@@ -97,7 +97,7 @@
                                         @foreach(var i in Model.competitions)
                                         {
                                             <li class="menu-sub-list">
-                                                <a href="/Home/MainCompetitionPage" class="link menu-sub-link gap-4">
+                                                <a href="/Home/CompetitionDetails?CompetitonID=@i.LastVersion" class="link menu-sub-link gap-4">
                                                     <span class="d-none d-lg-inline-block">
                                                         <img src="/img/@i.CompetitionImageName" alt="image" class="img-fluid" width="30px">
                                                     </span> @i.CompetitionName
@@ -114,18 +114,12 @@
     width: max-content;
 ">
                                         <!-- ********************************************************* -->
-                                        <li class="menu-sub-list">
-                                                <a href="/Home/ClubView?ClubID" class="link menu-sub-link gap-4">
-                                                    <span class="d-none d-lg-inline-block">
-                                                        <img src="" alt="image" class="img-fluid" width="30px">
-                                                    </span> FIT - Workshops
-                                                </a>
-                                            </li>
+                                        
                                         @foreach (var i in Model.clubs)
                                         {
 
                                             <li class="menu-sub-list">
-                                                <a href="/Home/ClubView?ClubID=@i.ClubsUpdateId" class="link menu-sub-link gap-4">
+                                                <a href="/Home/ClubsWorkshop?ClubID=@i.ClubID" class="link menu-sub-link gap-4">
                                                     <span class="d-none d-lg-inline-block">
                                                         <img src="/img/@i.ClubLogoImageName" alt="image" class="img-fluid" width="30px">
                                                     </span> @i.ClubName - Workshops

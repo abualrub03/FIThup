@@ -198,42 +198,24 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row g-4">
-        <div class="col-md-6">
-            <div class="row g-4">
-                <div class="col-12">
-                    <img src="/img/1.jpg" alt="image" class="img-fluid rounded-1 img-fadeIn-1" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                </div>
-                <div class="col-12">
-                    <h6 class="clr-neutral-80 mb-10 animate-line-3d" style="perspective: 400px;"> Be part of our community through your participations <span class="clr-grad-1">in clubs, competitions and various event</span> </h6>
-                    <div class="d-flex flex-wrap align-items-center gap-10 reveal-from-bottom" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                        <a href="register.html" class="gradient-btn-1 position-relative link d-inline-flex justify-content-center align-items-center gap-2 px-6 py-4 rounded fw-bold text-center">
-                            <span class="d-inline-block"> Join Community </span>
-                            <span class="d-inline-block">
-                                <i class="bi bi-arrow-right"></i>
-                            </span>
-                        </a>
-                        <div class="d-inline-flex align-items-center gap-2">
-                            <h4 class="mb-0 fw-extrabold clr-neutral-90"> 150+ </h4>
-                            <span class="d-inline-block clr-neutral-90"> outstanding students 👨‍💻 </span>
+@if (Model.ListImages != null)
+{
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-md-12">
+                <div class="row g-4">
+                    @foreach (var i in Model.ListImages)
+                    {
+                        <div class="col-md-4">
+                            <img src="/img/@i.ImageName" alt="image" class="img-fluid rounded-1 w-100 img-fadeIn-2" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1 ; object-fit: cover;width: 450px !important;height: 450px;">
                         </div>
-                    </div>
+                    }
+
+
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <img src="/img/6.jpg" alt="image" class="img-fluid rounded-1 w-100 img-fadeIn-2" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                </div>
-                <div class="col-md-6">
-                    <img src="/img/7.jpg" alt="image" class="img-fluid rounded-1 w-100 img-fadeIn-3" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                </div>
-                <div class="col-12">
-                    <img src="/img/3.jpg" alt="image" class="img-fluid rounded-1 img-fadeIn-4" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                </div>
-            </div>
+
         </div>
     </div>
-</div>
+}

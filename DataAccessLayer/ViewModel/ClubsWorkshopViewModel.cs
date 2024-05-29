@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ViewModel
 {
-    public class EventDetailsViewModel : LayoutViewModel
+    public class ClubsWorkshopViewModel : LayoutViewModel
     {
-        public List<Event> EventDetails { get; set; }
+        public List<WorkShopWithClubs> workshops { get; set; }
+        public List<Clubs> club {  get; set; }
 
-        public List<Images> ListImages { get; set; }
     }
 }
