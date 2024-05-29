@@ -13,8 +13,8 @@ namespace FIThup.Controllers
         public IActionResult ClubView(int ClubID){
 
             var VM = new ClubViewModel();
+            VM.events = new FIThupProvider.EventWithClub().getEventWithClub(ClubID);
             VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
-
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
             VM.clubsHistory = new FIThupProvider.ClubsHistory().getClubHistory(ClubID);
             VM.TeamMembers = new FIThupProvider.ClubsTeamMembers().getTeamMembersByClubHistoryID(VM.clubsHistory.FirstOrDefault().ClubsUpdateId);
@@ -22,7 +22,6 @@ namespace FIThup.Controllers
             VM.workShopWithClubs = new FIThupProvider.WorkShopWithClubs().getWorkShopWithClubs(VM.clubsHistory.FirstOrDefault().ClubsUpdateId);
             VM.ClubHistoryCompetitons = new FIThupProvider.Competitions().getClubHistoryCompetitions(VM.clubsHistory.FirstOrDefault().ClubsUpdateId);
             VM.Users = new FIThupProvider.Users().getStudentNameByID(VM.clubsHistory.FirstOrDefault().LastUpdateUser);
-
             return View("Club",VM);
         }
 
@@ -55,12 +54,11 @@ namespace FIThup.Controllers
         public IActionResult WorkShopDetails(int WorkShopID)
         {
             var provider = new FIThupProvider.WorkShopWithClubs();
-
             var VM = new ViewModel.WorkShopWithClubsViewModel();
             VM.CompetitonDetails = provider.getWorkShopDetailsByID(WorkShopID);
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
-
-
             return View("WorkshopDetails", VM);
         }
         public IActionResult EventsAndUpComingsDetails(int EventsAndUpComingsID)
@@ -82,16 +80,25 @@ namespace FIThup.Controllers
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
             return View("SearchPage",VM);
         }
-
-
-
-
         public IActionResult MainCompetitionPage()
         {
             var VM = new ViewModel.MainCompetitionPageViewModel();
             VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
             return View("MainCompetitionPage", VM);
+        }
+
+        /////////////////
+        //
+        public IActionResult EventDetails(int EventId)
+        {
+            var provider = new FIThupProvider.EventWithClub();
+            var VM = new ViewModel.EventDetailsViewModel();
+            VM.EventDetails = provider.getEventDetailsByID(EventId);
+            VM.clubs = new FIThupProvider.Clubs().getClubsList();
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+
+            return View("EventDetails", VM);
         }
 
     }
