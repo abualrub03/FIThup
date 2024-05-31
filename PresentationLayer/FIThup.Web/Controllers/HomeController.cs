@@ -124,5 +124,31 @@ namespace FIThup.Controllers
             VM.club = new FIThupProvider.Clubs().getClubDetailsWithClubId(ClubID);
             return View("ClubsWorkshop", VM);
         }
-    }
+
+        public IActionResult UpCommingEvents(string EventCategory)
+        {
+            var VM = new UpCommingEventsViewModel();
+            VM.EventCategory = EventCategory;
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+            VM.clubs = new FIThupProvider.Clubs().getClubsList();
+            if (EventCategory == "Competitions")
+                {
+                    VM.UpcommingCompetitions = new FIThupProvider.Competitions().getUpCommingCompetitions();
+                }
+            else if (EventCategory == "Workshops")
+            {
+                VM.UpcommingWorkShopWithClubs = new FIThupProvider.WorkShopWithClubs().getUpCommingWorkshops();
+            }
+            else if (EventCategory == "Events")
+            {
+                VM.UpcommingEvents = new FIThupProvider.EventWithClub().getUpCommingEvents();
+            }
+
+                return View("UpCommingEvents", VM);
+            }
+
+
+
+
+        }
 }

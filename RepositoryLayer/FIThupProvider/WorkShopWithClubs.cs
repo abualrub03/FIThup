@@ -40,6 +40,13 @@ namespace FIThupProvider
             };
             return DAL2.ExecuteReader<Entities.WorkShopWithClubs>("spGetWorkshopsByClubID");
         }
+        public List<Entities.WorkShopWithClubs> getUpCommingWorkshops()
+        {
+
+            using var DAL2 = new DataAccess.DataAccessLayer();
+           
+            return DAL2.ExecuteReader<Entities.WorkShopWithClubs>("spGetUpCommingWorkshops");
+        }
 
     }
 }

@@ -30,5 +30,12 @@ namespace FIThupProvider
             };
             return DAL2.ExecuteReader<Entities.Event>("spGetEventDetailsByID");
         }
+        public List<Entities.Event> getUpCommingEvents()
+        {
+
+            using var DAL2 = new DataAccess.DataAccessLayer();
+          
+            return DAL2.ExecuteReader<Entities.Event>("spGetUpCommingEvents");
+        }
     }
 }

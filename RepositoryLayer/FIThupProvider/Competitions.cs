@@ -84,6 +84,12 @@ namespace FIThupProvider
             };
             return DAL2.ExecuteReader<Entities.Competitions>("spGetAllEditionsForThisCompetitionsCategory");
         }
+        public List<Entities.Competitions> getUpCommingCompetitions()
+        {
+
+            using var DAL2 = new DataAccess.DataAccessLayer();
+            return DAL2.ExecuteReader<Entities.Competitions>("spGetUpCommingCompetitionsas");
+        }
 
 
     }
