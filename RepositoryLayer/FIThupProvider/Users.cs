@@ -20,5 +20,27 @@ namespace FIThupProvider
             };
             return DAL2.ExecuteReader<Entities.Users>("spGetUserByID");
         }
+        public List<Entities.Users> SignUpNewUser(Entities.Users usr)
+        {
+
+            using var DAL2 = new DataAccess.DataAccessLayer();
+            DAL2.Parameters = new List<SqlParameter> {
+                new SqlParameter{ ParameterName = "@Username", Value =  usr.Username },
+                new SqlParameter{ ParameterName = "@UniEmail", Value =  usr.UniEmail },
+                new SqlParameter{ ParameterName = "@Password", Value =  usr.Password }
+
+            };
+            return DAL2.ExecuteReader<Entities.Users>("spSignUpNewUser");
+        }public List<Entities.Users> SignInRequest(Entities.Users usr)
+        {
+
+            using var DAL2 = new DataAccess.DataAccessLayer();
+            DAL2.Parameters = new List<SqlParameter> {
+                new SqlParameter{ ParameterName = "@Username", Value =  usr.Username },
+                new SqlParameter{ ParameterName = "@Password", Value =  usr.Password }
+
+            };
+            return DAL2.ExecuteReader<Entities.Users>("SignInRequest");
+        }
     }
 }

@@ -36,7 +36,6 @@ namespace FIThupProvider
             using var DAL2 = new DataAccess.DataAccessLayer();
             DAL2.Parameters = new List<SqlParameter> {
                 new SqlParameter{ ParameterName = "@ClubID", Value =  ClubID },
-
             };
             return DAL2.ExecuteReader<Entities.WorkShopWithClubs>("spGetWorkshopsByClubID");
         }
@@ -47,6 +46,15 @@ namespace FIThupProvider
            
             return DAL2.ExecuteReader<Entities.WorkShopWithClubs>("spGetUpCommingWorkshops");
         }
+        public List<Entities.WorkShopWithClubs> SearchWorkShopWithClubsOnString(string str)
+        {
+            str = "%" + str + "%";
+            using var DAL2 = new DataAccess.DataAccessLayer();
+            DAL2.Parameters = new List<SqlParameter> {
+                new SqlParameter{ ParameterName = "@string", Value =  str },
 
+            };
+            return DAL2.ExecuteReader<Entities.WorkShopWithClubs>("spSearchWorkShopWithClubsOnString");
+        }
     }
 }

@@ -76,9 +76,9 @@
                                     <a href="#" class="link menu-link has-sub"> Clubs </a>
                                     <ul class="list menu-sub">
                                         <!-- ********************************************************* -->
-                                        @foreach(var i in Model.clubs)
+                                        @foreach (var i in Model.clubs)
                                         {
-                                            
+
                                             <li class="menu-sub-list">
                                                 <a href="/Home/ClubView?ClubID=@i.ClubsUpdateId" class="link menu-sub-link gap-4">
                                                     <span class="d-none d-lg-inline-block">
@@ -94,7 +94,7 @@
                                     <a href="#" class="link menu-link has-sub"> Competitions </a>
                                     <ul class="list menu-sub" style="width: max-content;">
                                         <!-- ********************************************************* -->
-                                        @foreach(var i in Model.competitions)
+                                        @foreach (var i in Model.competitions)
                                         {
                                             <li class="menu-sub-list">
                                                 <a href="/Home/CompetitionDetails?CompetitonID=@i.LastVersion" class="link menu-sub-link gap-4">
@@ -105,7 +105,7 @@
                                             </li>
                                         }
                                         <!-- ********************************************************* -->
-                                  
+
                                     </ul>
                                 </li>
                                 <li class="menu-list">
@@ -114,7 +114,6 @@
     width: max-content;
 ">
                                         <!-- ********************************************************* -->
-                                        
                                         @foreach (var i in Model.clubs)
                                         {
 
@@ -129,41 +128,47 @@
                                         <!-- ********************************************************* -->
                                     </ul>
                                 </li>
-                                
-                            
+
+
                                 <li class="menu-list">
                                     <a href="#" class="link menu-link has-sub"> Upcomings </a>
                                     <ul class="list menu-sub" style="    width: max-content;">
                                         <!-- ********************************************************* -->
-                                        
 
-                                            <li class="menu-sub-list">
+
+                                        <li class="menu-sub-list">
                                             <a href="/Home/UpCommingEvents?EventCategory=Competitions" class="link menu-sub-link gap-4">
-                                                     Upcmming Competitions
-                                                </a>
-                                            </li> 
-                                            <li class="menu-sub-list">
+                                                Upcmming Competitions
+                                            </a>
+                                        </li>
+                                        <li class="menu-sub-list">
                                             <a href="/Home/UpCommingEvents?EventCategory=Workshops" class="link menu-sub-link gap-4">
-                                                    Upcoming Workshops
-                                                </a>
-                                            </li>  <li class="menu-sub-list">
+                                                Upcoming Workshops
+                                            </a>
+                                        </li>
+                                        <li class="menu-sub-list">
                                             <a href="/Home/UpCommingEvents?EventCategory=Events" class="link menu-sub-link gap-4">
-                                                    Upcoming Events
-                                                </a>
-                                            </li>
-                                        
+                                                Upcoming Events
+                                            </a>
+                                        </li>
+
                                         <!-- ********************************************************* -->
                                     </ul>
                                 </li>
                                
-                                
-                                
-                                
+
+
+
+
                             </ul>
                             <ul class="list list-lg-row gap-4 gap-lg-6">
-                              
                                 <li class="menu-list mx-4 mx-lg-0">
-                                    <a href="/Home/SignOut" class="gradient-btn-1 position-relative z-1 link d-inline-flex justify-content-center px-4 py-2 rounded fw-bold text-center"> SignOut </a>
+                                    <a href="/UnAuth/SignIn" class="animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1">
+                                        <span class="d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded"> Login </span>
+                                    </a>
+                                </li>
+                                <li class="menu-list mx-4 mx-lg-0">
+                                    <a href="/UnAuth/SignUp" class="gradient-btn-1 position-relative z-1 link d-inline-flex justify-content-center px-4 py-2 rounded fw-bold text-center"> Get Started </a>
                                 </li>
                             </ul>
                         </div>
@@ -220,7 +225,7 @@
                                     <div class="col-md-3">
                                         <h6 class="mb-5 fs-18 clr-neutral-90"> Quick Menu </h6>
                                         <ul class="list gap-4">
-
+                                            
                                             <li>
                                                 <a href="/UnAuth/SignIn" class="link d-inline-block clr-neutral-80 :clr-primary-key"> Sign Up  </a>
                                             </li>
@@ -286,5 +291,5 @@
     @await RenderSectionAsync("Scripts", required: false)
 
     <!-- /Footer Section -->
-    </body>
+</body>
 </html>

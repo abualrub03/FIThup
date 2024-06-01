@@ -6,47 +6,83 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Entities;
+using ViewModel;
 
 namespace FIThup.Web.Controllers
 {
-    public class UnAuthController   
+    public class UnAuthController : BaseController
     {
-        // <<< loginValidation First step
-        [HttpPost]
-        public async Task<IActionResult> loginValidation(ViewModel.UserViewModels.loginViewModel acc)
+        [Route("/")]
+        public IActionResult Index()
         {
+            var VM = new IndexViewModel();
+            VM.clubs = new FIThupProvider.Clubs().getClubsList();
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+            return View("Index",VM);
+        }
+
+        public IActionResult SignUp()
+        {
+            var VM = new IndexViewModel();
+            VM.clubs = new FIThupProvider.Clubs().getClubsList();
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+            return View(VM);
+        }
+
+        public IActionResult SignIn()
+        {
+            var VM = new IndexViewModel();
+            VM.clubs = new FIThupProvider.Clubs().getClubsList();
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+            return View(VM);
+        }
+        
+        [HttpPost]
+        public IActionResult SignUpRequest(Entities.Users usr)
+        {
+            new FIThupProvider.Users().SignUpNewUser(usr);
+            var VM = new IndexViewModel();
+            VM.clubs = new FIThupProvider.Clubs().getClubsList();
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
+            return View("SignIn",VM);
+
+        } 
+        [HttpPost]
+        public async Task<IActionResult> SignInRequest(Entities.Users usr)
+        {
+
+
             if (ModelState.IsValid)
             {
-                var data = new RacoonProvider.Team().getTeamMemberByInfo(acc.Email, acc.Password);
+                var data = new FIThupProvider.Users().SignInRequest(usr);
                 if (data == null)
                 {
                     ModelState.AddModelError("FormValidation", "Wrong Username or Password");
-                    return View("login", acc);
+                    return View("SignIn", usr);
                 }
                 var claims = new List<Claim>
                      {
-                         new Claim("CustomerID", data.Id.ToString() ,ClaimValueTypes.Integer32),
-                         new Claim("CustomerEmail", data.Email,ClaimValueTypes.Email),
-                         new Claim(ClaimTypes.Role, data.Role,ClaimValueTypes.String ),
-                         new Claim(ClaimTypes.Role, data.Name,ClaimValueTypes.String )
+                         new Claim("UserID", data.FirstOrDefault().UserID.ToString() ,ClaimValueTypes.Integer32),
+                         new Claim("CustomerEmail", data.FirstOrDefault().UniEmail,ClaimValueTypes.Email),
+                         new Claim(ClaimTypes.Role, data.FirstOrDefault().Role,ClaimValueTypes.String ),
+                         new Claim(ClaimTypes.Role, data.FirstOrDefault().FullName,ClaimValueTypes.String )
                      };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
             }
             else
-                return View("login", acc);
+                return View("SignIn", usr);
 
 
-            var v = new ViewMoreViewModel() { };
-            v.Contacts = new RacoonProvider.Contact().spNewSearchIntblContact("", "%%", 0, 10);
-            v.NumberOfItemsSearchedFor = new RacoonProvider.Contact().spNewCountSearchByName("%%", "%%");
-            v.Services = new RacoonProvider.Services().getAllServices();
+            var VM = new IndexViewModel();
+            VM.clubs = new FIThupProvider.Clubs().getClubsList();
+            VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
 
 
-            return RedirectToAction("dashboard", "Admin", v);
+            return RedirectToAction("Index", "Home", VM);
+
         }
-        // loginValidation >>>
 
     }
 }

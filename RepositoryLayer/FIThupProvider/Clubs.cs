@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Entities;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace FIThupProvider
             using var DAL2 = new DataAccess.DataAccessLayer();
             return DAL2.ExecuteReader<Entities.Clubs>("spGetClubsList");
         }
+   
         public List<Entities.Clubs> getClubDetailsWithClubId(int ClubID)
         {
 
@@ -24,5 +26,6 @@ namespace FIThupProvider
             };
             return DAL2.ExecuteReader<Entities.Clubs>("spGetClubDetailsWithClubId");
         }
+        
     }
 }

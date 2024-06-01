@@ -1,18 +1,18 @@
 ﻿@model ViewModel.IndexViewModel
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/HomeLayout.cshtml";
+    Layout = "~/Views/Shared/UnAuthLayout.cshtml";
 }
 
 <script type="text/javascript">
-
-
+    
+   
 
 </script>
 
 <body class="bg-black">
-
-
+    
+   
     <div class="trigger-showcase position-relative z-1">
         <!-- Hero Section Shapes -->
         <div class="hero-1-shapes">
@@ -35,7 +35,7 @@
                             <div class="d-flex p-3 bg-neutral-10 rounded ">
                                 <form method="get" action="/Home/SearchPage" style="display: contents;">
                                     <input type="text" id="searchTerm" class="form-control newsletter-1__input bg-transparent clr-neutral-60" name="searchTerm" placeholder="Clubs, competitions, workshops, etc">
-                                    <button type="submit" class="newsletter-1__btn d-inline-block py-3 px-5 rounded fw-bold clr-white bg-grad-1"> Search </button>
+                                    <button type="submit" class="newsletter-1__btn d-inline-block py-3 px-5 rounded fw-bold clr-white bg-grad-1" > Search </button>
                                 </form>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                                     <li aria-hidden="true">
                                         <h2 class="mb-0 clr-neutral-90" style="
     font-size: xx-large;
-">
+" >
                                             This Semester Achievements
                                         </h2>
                                     </li>
@@ -176,7 +176,7 @@
                         </div><div class="col-md-6">
                             <img src="/img/t.jpeg" alt="image" class="img-fluid rounded-1 w-100 img-fadeIn-2" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
                         </div>
-
+                        
                         <div class="col-12">
                             <img src="/img/photo1716479774.jpeg" alt="image" class="img-fluid rounded-1 img-fadeIn-4" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
                         </div>
@@ -195,10 +195,10 @@
         </div>
         <!-- /Generated Image Showcase -->
     </div>
-
-
-
-
+   
+ 
+ 
+  
     <!-- scrpts -->
     <script src="/js/plugins.js"></script>
     <script src="/js/app.js"></script>

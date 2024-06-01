@@ -4,7 +4,16 @@ namespace FIThupProvider
 {
     public class ClubsHistory : Core.Disposable 
     {
-        
+        public List<Entities.Clubs> SearchClubsOnString(string str)
+        {
+            str = "%"+str+"%";
+            using var DAL2 = new DataAccess.DataAccessLayer();
+            DAL2.Parameters = new List<SqlParameter> {
+                new SqlParameter{ ParameterName = "@string", Value =  str },
+
+            };
+            return DAL2.ExecuteReader<Entities.Clubs>("spSearchClubsOnString");
+        }
         public List<Entities.ClubsHistory> getClubHistory(int ClubID)
         {
          

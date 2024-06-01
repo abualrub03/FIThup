@@ -1,34 +1,31 @@
 ﻿using Entities;
 using FIThup.Web.Controllers;
 using FIThupProvider;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using ViewModel;
 
 namespace FIThup.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController  : AuthorizedController 
     {
-
-       
-
-
-
-
+        public async Task<IActionResult> SignOut()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "UnAuth");
+        }
         public IActionResult Index()
         {
             var VM = new IndexViewModel();
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
             VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
-            return View(VM);
-        }
-        public IActionResult Club()
-        {
-            return View();
+            return View("Index", VM);
         }
 
-        
-        
+
+
         public IActionResult EventsAndUpComingsDetails(int EventsAndUpComingsID)
         {
             var provider = new FIThupProvider.WorkShopWithClubs();

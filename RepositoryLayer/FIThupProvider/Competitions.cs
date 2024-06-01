@@ -10,7 +10,16 @@ namespace FIThupProvider
 {
     public class Competitions : Core.Disposable
     {
+        public List<Entities.Competitions> SearchCompetitionsOnString(string str)
+        {
+            str = "%" + str + "%";
+            using var DAL2 = new DataAccess.DataAccessLayer();
+            DAL2.Parameters = new List<SqlParameter> {
+                new SqlParameter{ ParameterName = "@string", Value =  str },
 
+            };
+            return DAL2.ExecuteReader<Entities.Competitions>("spSearchCompetitionsOnString");
+        }
         public List<Entities.Competitions> getClubHistoryCompetitions(int ClubHistroyID)
         {
 

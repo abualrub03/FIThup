@@ -1,7 +1,16 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.AspNetCore.Authentication.Cookies;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+.AddCookie(options =>
+{
+options.LoginPath = "/UnAuth/SignIn";
+options.AccessDeniedPath = "/UnAuth/SignIn";
+});
+
+builder.Services.AddAuthorization();
+builder.Services.AddDataProtection();
 
 var app = builder.Build();
 
@@ -18,10 +27,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=UnAuth}/{action=Index}/{id?}");
 
 app.Run();
