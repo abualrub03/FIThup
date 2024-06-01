@@ -12,7 +12,16 @@ namespace FIThupProvider
     {
         public List<Entities.Competitions> SearchCompetitionsOnString(string str)
         {
-            str = "%" + str + "%";
+            if(str != null)
+            {
+                str = "%" + str + "%";
+            }
+            else
+            {
+                str = "";
+            }
+            
+            
             using var DAL2 = new DataAccess.DataAccessLayer();
             DAL2.Parameters = new List<SqlParameter> {
                 new SqlParameter{ ParameterName = "@string", Value =  str },

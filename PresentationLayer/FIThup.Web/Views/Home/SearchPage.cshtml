@@ -5,6 +5,7 @@
 }
 
 
+
 <!--
     Popular S
 -->
@@ -55,103 +56,92 @@
             </div>
             <div class="col-lg-8">
                 
-                <div class="row gy-4">
-                    <div class="col-12">
-                        <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
-                            <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
-                                <img src="/img/large-post-1.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
-                            </a>
-                            <ul class="list list-row gap-5 mt-10">
-                                <li class="fs-14 clr-neutral-80 d-flex gap-2">
-                                    <i class="bi bi-calendar2-date"></i> March 19, 2022
-                                </li>
-                                <li class="fs-14 clr-neutral-80"> (15) Comments </li>
-                            </ul>
-                            <h3 class="h4 mt-2">
-                                <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
-                            </h3>
-                            <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
-                            <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                <div class="row gy-4" id="div1">
+                    @foreach(var i in Model.listClubs)
+                    {
+                        <div class="col-12">
+                            <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                                <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                    <img src="/img/@i.ClubImageName" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                </a>
+                                <ul class="list list-row gap-5 mt-10">
+                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                        <i class="bi bi-calendar2-date"></i> @i.LastUpdateDateTime
+                                    </li>
+                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                </ul>
+                                <h3 class="h4 mt-2">
+                                    <a href="/Home/ClubView?ClubID=@i.ClubsUpdateId" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">@i.PerviewName</a>
+                                </h3>
+                                <p class="clr-neutral-80 mt-6">@i.ClubInfo</p>
+                                <a href="/Home/ClubView?ClubID=@i.@i.ClubsUpdateId" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
-                            <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
-                                <img src="/img/large-post-2.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
-                            </a>
-                            <ul class="list list-row gap-5 mt-10">
-                                <li class="fs-14 clr-neutral-80 d-flex gap-2">
-                                    <i class="bi bi-calendar2-date"></i> March 19, 2022
-                                </li>
-                                <li class="fs-14 clr-neutral-80"> (15) Comments </li>
-                            </ul>
-                            <h3 class="h4 mt-2">
-                                <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
-                            </h3>
-                            <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
-                            <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
-                            <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
-                                <img src="/img/large-post-3.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
-                            </a>
-                            <ul class="list list-row gap-5 mt-10">
-                                <li class="fs-14 clr-neutral-80 d-flex gap-2">
-                                    <i class="bi bi-calendar2-date"></i> March 19, 2022
-                                </li>
-                                <li class="fs-14 clr-neutral-80"> (15) Comments </li>
-                            </ul>
-                            <h3 class="h4 mt-2">
-                                <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
-                            </h3>
-                            <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
-                            <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
-                            <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
-                                <img src="/img/large-post-1.png" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
-                            </a>
-                            <ul class="list list-row gap-5 mt-10">
-                                <li class="fs-14 clr-neutral-80 d-flex gap-2">
-                                    <i class="bi bi-calendar2-date"></i> March 19, 2022
-                                </li>
-                                <li class="fs-14 clr-neutral-80"> (15) Comments </li>
-                            </ul>
-                            <h3 class="h4 mt-2">
-                                <a href="blog-details.html" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">Conducting an SEO Audit the Ultimate Checklist</a>
-                            </h3>
-                            <p class="clr-neutral-80 mt-6">With our AI Generators, the possibilities are endless.Compelling marketing copy designing stunning visuals personalize user experiences.</p>
-                            <a href="blog-details.html" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
-                        </div>
-                    </div>
+                    }
+                    
+                  
                 </div>
-                <ul class="pagination flex-wrap number-pagination gap-2 mt-12">
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <i class="bi bi-chevron-left"></i>
-                        </a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <i class="bi bi-chevron-right"></i>
-                        </a>
-                    </li>
-                </ul>
+
+                <div class="row gy-4" id="div2" style="display:none">
+                    @foreach (var i in Model.listCompetitions)
+                    {
+                        <div class="col-12">
+                            <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                                <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                    <img src="/img/@i.MainCompetitonImage" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                </a>
+                                <ul class="list list-row gap-5 mt-10">
+                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                        <i class="bi bi-calendar2-date"></i> @i.CompetitionDateTime
+                                    </li>
+                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                </ul>
+                                <h3 class="h4 mt-2">
+                                    <a href="/Home/CompetitionDetails?CompetitonID=@i.CompetitionID" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">@i.CompetitionTitle</a>
+                                </h3>
+                                <p class="clr-neutral-80 mt-6">@i.SmallDescription</p>
+                                <a href="/Home/CompetitionDetails?CompetitonID=@i.CompetitionID" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+
+
+
+                <div class="row gy-4" id="div3" style="display:none">
+                    @foreach (var i in Model.listWorkShopWithClubs)
+                    {
+                        <div class="col-12">
+                            <div class="p-5 p-sm-8 bg-neutral-4 rounded-4">
+                                <a href="blog-details.html" class="d-block rounded-top-start-4 rounded-top-end-4 overflow-hidden">
+                                    <img src="/img/@i.ImageName" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                                </a>
+                                <ul class="list list-row gap-5 mt-10">
+                                    <li class="fs-14 clr-neutral-80 d-flex gap-2">
+                                        <i class="bi bi-calendar2-date"></i> @i.WorkShopDateTime
+                                    </li>
+                                    <li class="fs-14 clr-neutral-80"> (15) Comments </li>
+                                </ul>
+                                <h3 class="h4 mt-2">
+                                    <a href="/Home/WorkShopDetails?WorkShopID=@i.WorkShopID" class="d-block clr-neutral-90 link fw-bold max-text-24 :clr-primary-key">@i.Title</a>
+                                </h3>
+                                <p class="clr-neutral-80 mt-6">@i.SmallDescription</p>
+                                <a href="/Home/WorkShopDetails?WorkShopID=@i.WorkShopID" class="d-inline-block py-4 px-8 clr-white bg-primary-key :bg-primary-30 rounded-2 link mt-6">Explore More</a>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+                
             </div>
             <div class="col-lg-4">
                 <div class="bg-neutral-4 py-5 px-4 py-sm-10 px-sm-8 rounded-1">
                     <h4 class="clr-neutral-90 fw-extrabold fs-24 mb-6">Search</h4>
-                    <form class="d-flex bg-neutral-12 rounded-top-start-2 rounded-bottom-start-2">
-                        <input type="search" name="#" placeholder="Serach..." class="form-control newsletter-1__input h-13 bg-transparent border border-neutral-24 clr-neutral-60 rounded-0 rounded-top-start-2 rounded-bottom-start-2">
+                    <form class="d-flex bg-neutral-12 rounded-top-start-2 rounded-bottom-start-2" method="get" action="/Home/SearchPage">
+                        <input type="search" name="searchTerm" placeholder="Serach..." class="form-control newsletter-1__input h-13 bg-transparent border border-neutral-24 clr-neutral-60 rounded-0 rounded-top-start-2 rounded-bottom-start-2">
                         <button type="submit" class="px-5 bg-primary-key clr-white border-0 rounded-top-end-2 rounded-bottom-end-2"><i class="bi bi-search"></i></button>
                     </form>
                  
@@ -164,4 +154,29 @@
 </div>
 
 <!-- /Hero 1 -->
+<script type="text/javascript">
+    console.log("ddd");
+    const button1 = document.getElementById("p1-tab");
+    const button2 = document.getElementById("p3-tab");
+    const button3 = document.getElementById("p4-tab");
 
+    const div1 = document.getElementById("div1");
+    const div2 = document.getElementById("div2");
+    const div3 = document.getElementById("div3");
+
+    button1.addEventListener("click", function () {
+        div1.style.display = "block";
+        div2.style.display = "none";
+        div3.style.display = "none";
+    });
+    button2.addEventListener("click", function () {
+        div1.style.display = "none";
+        div2.style.display = "block";
+        div3.style.display = "none";
+    });
+    button3.addEventListener("click", function () {
+        div1.style.display = "none";
+        div2.style.display = "none";
+        div3.style.display = "block";
+    });
+</script>

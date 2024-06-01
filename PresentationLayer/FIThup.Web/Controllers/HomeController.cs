@@ -43,6 +43,9 @@ namespace FIThup.Controllers
             var VM = new ViewModel.SearchPageViewModel();
             VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
+            VM.listCompetitions = new FIThupProvider.Competitions().SearchCompetitionsOnString(searchTerm);
+            VM.listClubs = new FIThupProvider.ClubsHistory().SearchClubsOnString(searchTerm);
+            VM.listWorkShopWithClubs = new FIThupProvider.WorkShopWithClubs().SearchWorkShopWithClubsOnString(searchTerm);
             return View("SearchPage",VM);
         }
         public IActionResult MainCompetitionPage()
