@@ -1,16 +1,19 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 .AddCookie(options =>
-{
+{       
 options.LoginPath = "/UnAuth/SignIn";
 options.AccessDeniedPath = "/UnAuth/SignIn";
 });
 
 builder.Services.AddAuthorization();
 builder.Services.AddDataProtection();
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 
 var app = builder.Build();
 

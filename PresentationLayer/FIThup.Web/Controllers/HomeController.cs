@@ -5,16 +5,45 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 using ViewModel;
 
 namespace FIThup.Controllers
 {
     public class HomeController  : AuthorizedController 
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public HomeController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
         public async Task<IActionResult> SignOut()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "UnAuth");
+        }
+        [HttpPost]
+        public void AddComment( string CommentText , int  CommentEventRecieverId , string Category) 
+        {
+            /*
+            var user = _httpContextAccessor.HttpContext.User;
+            var userId = this.User.FindFirstValue("UserID");
+            com.CommentDateTime = DateTime.Now;
+            com.CommentText = com.CommentText;
+            */
+            Entities.Comments  a = new Entities.Comments();
+            a.CommentDateTime = DateTime.Now;
+            var user = _httpContextAccessor.HttpContext.User;
+            var userId = this.User.FindFirstValue("UserID");
+            a.CommentSenderId = int.Parse(userId); ;
+
+            a.CommentText = CommentText; 
+            a.Category = Category;
+            a.CommentEventRecieverId = CommentEventRecieverId;
+            
+            new FIThupProvider.Comments().AddCommentsOnEvent(a);
+            
         }
         public IActionResult Index()
         {
@@ -91,6 +120,7 @@ namespace FIThup.Controllers
         {
 
             var VM = new ClubViewModel();
+            VM.Comments = new FIThupProvider.Comments().CommentsOnEvent(ClubID, "Club");
             VM.events = new FIThupProvider.EventWithClub().getEventWithClub(ClubID);
             VM.competitions = new FIThupProvider.CompetitionsCategory().getCompetitionsCategory();
             VM.clubs = new FIThupProvider.Clubs().getClubsList();
